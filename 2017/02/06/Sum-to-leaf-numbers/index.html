@@ -29,7 +29,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Sum_to_leaf_numbers" height="28">
+                <img src="/images/logo.png" alt="Sum_to_leaf_numbers" height="28">
             
             </a>
         </div>
@@ -163,7 +163,7 @@
  / \
 2   3</code></pre><p>The root-to-leaf path 1-&gt;2 represents the number 12.<br>The root-to-leaf path 1-&gt;3 represents the number 13.<br>Return the sum = 12 + 13 = 25.</p>
 <h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>这道题目不难，用递归很好解决，只要有儿子就要加数字，这里的数字组成方式是旧的树*10+新的数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumNumbers</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        getSum(root,root-&gt;val,sum);</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">getSum</span><span class="params">(TreeNode * root,<span class="keyword">int</span> number,<span class="keyword">int</span> &amp;sum)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left)</span><br><span class="line">            getSum(root-&gt;left,number*<span class="number">10</span>+root-&gt;left-&gt;val,sum);</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;right)</span><br><span class="line">            getSum(root-&gt;right,number*<span class="number">10</span>+root-&gt;right-&gt;val,sum);</span><br><span class="line">        <span class="keyword">if</span>(!root-&gt;left&amp;&amp;!root-&gt;right)&#123;</span><br><span class="line">            sum += number;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="hljs-comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="hljs-comment"> *     int val;</span></span><br><span class="line"><span class="hljs-comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="hljs-comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="hljs-comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="hljs-comment"> * &#125;;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sumNumbers</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!root) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;</span><br><span class="line">        getSum(root,root-&gt;val,sum);</span><br><span class="line">        <span class="hljs-keyword">return</span> sum;</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getSum</span><span class="hljs-params">(TreeNode * root,<span class="hljs-keyword">int</span> number,<span class="hljs-keyword">int</span> &amp;sum)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(root-&gt;left)</span><br><span class="line">            getSum(root-&gt;left,number*<span class="hljs-number">10</span>+root-&gt;left-&gt;val,sum);</span><br><span class="line">        <span class="hljs-keyword">if</span>(root-&gt;right)</span><br><span class="line">            getSum(root-&gt;right,number*<span class="hljs-number">10</span>+root-&gt;right-&gt;val,sum);</span><br><span class="line">        <span class="hljs-keyword">if</span>(!root-&gt;left&amp;&amp;!root-&gt;right)&#123;</span><br><span class="line">            sum += number;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -287,7 +287,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        30
                     </p>
                 </div>
             </div>
@@ -478,25 +478,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -564,6 +545,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
                     <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -593,25 +593,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -686,6 +667,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -701,7 +701,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Sum_to_leaf_numbers" height="28">
+                    <img src="/images/logo.png" alt="Sum_to_leaf_numbers" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -870,5 +870,5 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

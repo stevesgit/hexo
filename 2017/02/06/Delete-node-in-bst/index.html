@@ -29,7 +29,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Delete_node_in_bst" height="28">
+                <img src="/images/logo.png" alt="Delete_node_in_bst" height="28">
             
             </a>
         </div>
@@ -189,7 +189,7 @@ Another valid answer is [5,2,6,null,4,null,7].
     4   7</code></pre><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>这道题目重点分以下几种情况去分析</p>
 <ol>
 <li>如果要删除的那个节点存在，且他的左右子树不都存在。那就直接用子树去替代被删除的节点。</li>
-<li>如果要删除的节点左右子树都存在的话，正如上面所示的其实有两种解决方案，一种就是拿右子树的最小值去替代，另外一种就是拿左子树的最大值去替代。替代完之后又要删除替代的那个节点（这里逻辑就可以套用1去解决）。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">deleteNode</span><span class="params">(TreeNode* root, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="comment">//搜索那个要删除的节点</span></span><br><span class="line">        <span class="keyword">if</span>(key &lt; root-&gt;val)&#123;</span><br><span class="line">            <span class="comment">//在左子树搜</span></span><br><span class="line">            root-&gt;left = deleteNode(root-&gt;left,key);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(key &gt; root-&gt;val)&#123;</span><br><span class="line">            <span class="comment">//在右子树搜</span></span><br><span class="line">            root-&gt;right = deleteNode(root-&gt;right,key);</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//找到删除节点，而且左右子树只存在一个以下。</span></span><br><span class="line">            <span class="keyword">if</span>(!root-&gt;left||!root-&gt;right)&#123;</span><br><span class="line">                root = (root-&gt;left) ? root-&gt;left : root-&gt;right;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//左右子树都存在</span></span><br><span class="line">                TreeNode* cur;</span><br><span class="line">                cur = root-&gt;right;</span><br><span class="line">                <span class="keyword">while</span>(cur-&gt;left)&#123;</span><br><span class="line">                    cur = cur-&gt;left ;</span><br><span class="line">                &#125;</span><br><span class="line">                root-&gt;val = cur-&gt;val;</span><br><span class="line">            <span class="comment">//删除右子树下用来替换的节点。</span></span><br><span class="line">                root-&gt;right = deleteNode(root-&gt;right,cur-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<li>如果要删除的节点左右子树都存在的话，正如上面所示的其实有两种解决方案，一种就是拿右子树的最小值去替代，另外一种就是拿左子树的最大值去替代。替代完之后又要删除替代的那个节点（这里逻辑就可以套用1去解决）。<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="hljs-comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="hljs-comment"> *     int val;</span></span><br><span class="line"><span class="hljs-comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="hljs-comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="hljs-comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="hljs-comment"> * &#125;;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function">TreeNode* <span class="hljs-title">deleteNode</span><span class="hljs-params">(TreeNode* root, <span class="hljs-keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!root) <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;</span><br><span class="line">        <span class="hljs-comment">//搜索那个要删除的节点</span></span><br><span class="line">        <span class="hljs-keyword">if</span>(key &lt; root-&gt;val)&#123;</span><br><span class="line">            <span class="hljs-comment">//在左子树搜</span></span><br><span class="line">            root-&gt;left = deleteNode(root-&gt;left,key);</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(key &gt; root-&gt;val)&#123;</span><br><span class="line">            <span class="hljs-comment">//在右子树搜</span></span><br><span class="line">            root-&gt;right = deleteNode(root-&gt;right,key);</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            <span class="hljs-comment">//找到删除节点，而且左右子树只存在一个以下。</span></span><br><span class="line">            <span class="hljs-keyword">if</span>(!root-&gt;left||!root-&gt;right)&#123;</span><br><span class="line">                root = (root-&gt;left) ? root-&gt;left : root-&gt;right;</span><br><span class="line">            &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            <span class="hljs-comment">//左右子树都存在</span></span><br><span class="line">                TreeNode* cur;</span><br><span class="line">                cur = root-&gt;right;</span><br><span class="line">                <span class="hljs-keyword">while</span>(cur-&gt;left)&#123;</span><br><span class="line">                    cur = cur-&gt;left ;</span><br><span class="line">                &#125;</span><br><span class="line">                root-&gt;val = cur-&gt;val;</span><br><span class="line">            <span class="hljs-comment">//删除右子树下用来替换的节点。</span></span><br><span class="line">                root-&gt;right = deleteNode(root-&gt;right,cur-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> root;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -313,7 +313,7 @@ Another valid answer is [5,2,6,null,4,null,7].
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        30
                     </p>
                 </div>
             </div>
@@ -504,25 +504,6 @@ Another valid answer is [5,2,6,null,4,null,7].
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -590,6 +571,25 @@ Another valid answer is [5,2,6,null,4,null,7].
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
                     <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -619,25 +619,6 @@ Another valid answer is [5,2,6,null,4,null,7].
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -712,6 +693,25 @@ Another valid answer is [5,2,6,null,4,null,7].
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -727,7 +727,7 @@ Another valid answer is [5,2,6,null,4,null,7].
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Delete_node_in_bst" height="28">
+                    <img src="/images/logo.png" alt="Delete_node_in_bst" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -896,5 +896,5 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

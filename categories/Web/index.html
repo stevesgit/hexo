@@ -25,7 +25,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -75,7 +75,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Hexo" height="28">
+                <img src="/images/logo.png" alt="Hexo" height="28">
             
             </a>
         </div>
@@ -182,23 +182,23 @@
 <p>　　<strong>示例1：</strong></p>
 <p>　　银行网站A，它以GET请求来完成银行转账的操作，如：<a href="http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000" target="_blank" rel="noopener">http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000</a></p>
 <p>　　危险网站B，它里面有一段HTML的代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">http://www.mybank.com/Transfer.php?toBankId</span>=<span class="string">11&amp;money</span>=<span class="string">1000</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">http://www.mybank.com/Transfer.php?toBankId</span>=<span class="hljs-string">11&amp;money</span>=<span class="hljs-string">1000</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　首先，你登录了银行网站A，然后访问危险网站B，噢，这时你会发现你的银行账户少了1000块……</p>
 <p>　　为什么会这样呢？原因是银行网站A违反了HTTP规范，使用GET请求更新资源。在访问危险网站B的之前，你已经登录了银行网站A，而B中的<img>以GET的方式请求第三方资源（这里的第三方就是指银行网站了，原本这是一个合法的请求，但这里被不法分子利用了），所以你的浏览器会带上你的银行网站A的Cookie发出Get请求，去获取资源“<a href="http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000”，结果银行网站服务器收到请求后，认为这是一个更新资源操作（转账操作），所以就立刻进行转账操作" target="_blank" rel="noopener">http://www.mybank.com/Transfer.php?toBankId=11&amp;money=1000”，结果银行网站服务器收到请求后，认为这是一个更新资源操作（转账操作），所以就立刻进行转账操作</a>……</p>
 <p>　　<strong>示例2：</strong></p>
 <p>　　为了杜绝上面的问题，银行决定改用POST请求完成转账操作。</p>
 <p>　　银行网站A的WEB表单如下：　　</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"Transfer.php"</span> <span class="attr">method</span>=<span class="string">"POST"</span>&gt;</span></span><br><span class="line">　　　　<span class="tag">&lt;<span class="name">p</span>&gt;</span>ToBankId: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"toBankId"</span> /&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">　　　　<span class="tag">&lt;<span class="name">p</span>&gt;</span>Money: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"money"</span> /&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">　　　　<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Transfer"</span> /&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">　　<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"Transfer.php"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"POST"</span>&gt;</span></span><br><span class="line">　　　　<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>ToBankId: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"toBankId"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">　　　　<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Money: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"money"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">　　　　<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Transfer"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">　　<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　后台处理页面Transfer.php如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="meta">&lt;?php</span></span><br><span class="line">　　　　session_start();</span><br><span class="line">　　　　<span class="keyword">if</span> (<span class="keyword">isset</span>($_REQUEST[<span class="string">'toBankId'</span>] &amp;&amp;　<span class="keyword">isset</span>($_REQUEST[<span class="string">'money'</span>]))</span><br><span class="line">　　　　&#123;</span><br><span class="line">　　　　    buy_stocks($_REQUEST[<span class="string">'toBankId'</span>],　$_REQUEST[<span class="string">'money'</span>]);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　　　session_start();</span><br><span class="line">　　　　<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_REQUEST[<span class="hljs-string">'toBankId'</span>] &amp;&amp;　<span class="hljs-keyword">isset</span>($_REQUEST[<span class="hljs-string">'money'</span>]))</span><br><span class="line">　　　　&#123;</span><br><span class="line">　　　　    buy_stocks($_REQUEST[<span class="hljs-string">'toBankId'</span>],　$_REQUEST[<span class="hljs-string">'money'</span>]);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　<span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　危险网站B，仍然只是包含那句HTML代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">http://www.mybank.com/Transfer.php?toBankId</span>=<span class="string">11&amp;money</span>=<span class="string">1000</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">http://www.mybank.com/Transfer.php?toBankId</span>=<span class="hljs-string">11&amp;money</span>=<span class="hljs-string">1000</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　和示例1中的操作一样，你首先登录了银行网站A，然后访问危险网站B，结果…..和示例1一样，你再次没了1000块～T_T，这次事故的原因是：银行后台使用了$_REQUEST去获取请求的数据，而$_REQUEST既可以获取GET请求的数据，也可以获取POST请求的数据，这就造成了在后台处理程序无法区分这到底是GET请求的数据还是POST请求的数据。在PHP中，可以使用$_GET和$_POST分别获取GET请求和POST请求的数据。在JAVA中，用于获取请求数据request一样存在不能区分GET请求数据和POST数据的问题。</p>
 <p>　　示例3：</p>
 <p>　　经过前面2个惨痛的教训，银行决定把获取请求数据的方法也改了，改用$_POST，只获取POST请求的数据，后台处理页面Transfer.php代码如下：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="meta">&lt;?php</span></span><br><span class="line">　　　　session_start();</span><br><span class="line">　　　　<span class="keyword">if</span> (<span class="keyword">isset</span>($_POST[<span class="string">'toBankId'</span>] &amp;&amp;　<span class="keyword">isset</span>($_POST[<span class="string">'money'</span>]))</span><br><span class="line">　　　　&#123;</span><br><span class="line">　　　　    buy_stocks($_POST[<span class="string">'toBankId'</span>],　$_POST[<span class="string">'money'</span>]);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　　　session_start();</span><br><span class="line">　　　　<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'toBankId'</span>] &amp;&amp;　<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'money'</span>]))</span><br><span class="line">　　　　&#123;</span><br><span class="line">　　　　    buy_stocks($_POST[<span class="hljs-string">'toBankId'</span>],　$_POST[<span class="hljs-string">'money'</span>]);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　<span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　然而，危险网站B与时俱进，它改了一下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">　　&lt;head&gt;</span><br><span class="line">　　　　&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">　　　　　　<span class="function"><span class="keyword">function</span> <span class="title">steal</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">　　　　　　</span>&#123;</span><br><span class="line">          　　　　 iframe = <span class="built_in">document</span>.frames[<span class="string">"steal"</span>];</span><br><span class="line">　　     　　      iframe.document.Submit(<span class="string">"transfer"</span>);</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">　　&lt;/</span>head&gt;</span><br><span class="line"></span><br><span class="line">　　&lt;body onload=<span class="string">"steal()"</span>&gt;</span><br><span class="line">　　　　&lt;iframe name=<span class="string">"steal"</span> display=<span class="string">"none"</span>&gt;</span><br><span class="line">　　　　　　&lt;form method=<span class="string">"POST"</span> name=<span class="string">"transfer"</span>　action=<span class="string">"http://www.myBank.com/Transfer.php"</span>&gt;</span><br><span class="line">　　　　　　　　&lt;input type=<span class="string">"hidden"</span> name=<span class="string">"toBankId"</span> value=<span class="string">"11"</span>&gt;</span><br><span class="line">　　　　　　　　&lt;input type=<span class="string">"hidden"</span> name=<span class="string">"money"</span> value=<span class="string">"1000"</span>&gt;</span><br><span class="line">　　　　　　&lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp">　　　　&lt;/i</span>frame&gt;</span><br><span class="line">　　&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">　　&lt;head&gt;</span><br><span class="line">　　　　&lt;script type=<span class="hljs-string">"text/javascript"</span>&gt;</span><br><span class="line">　　　　　　<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">steal</span>(<span class="hljs-params"></span>)</span></span><br><span class="line"><span class="hljs-function">　　　　　　</span>&#123;</span><br><span class="line">          　　　　 iframe = <span class="hljs-built_in">document</span>.frames[<span class="hljs-string">"steal"</span>];</span><br><span class="line">　　     　　      iframe.document.Submit(<span class="hljs-string">"transfer"</span>);</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　&lt;<span class="hljs-regexp">/script&gt;</span></span><br><span class="line"><span class="hljs-regexp">　　&lt;/</span>head&gt;</span><br><span class="line"></span><br><span class="line">　　&lt;body onload=<span class="hljs-string">"steal()"</span>&gt;</span><br><span class="line">　　　　&lt;iframe name=<span class="hljs-string">"steal"</span> display=<span class="hljs-string">"none"</span>&gt;</span><br><span class="line">　　　　　　&lt;form method=<span class="hljs-string">"POST"</span> name=<span class="hljs-string">"transfer"</span>　action=<span class="hljs-string">"http://www.myBank.com/Transfer.php"</span>&gt;</span><br><span class="line">　　　　　　　　&lt;input type=<span class="hljs-string">"hidden"</span> name=<span class="hljs-string">"toBankId"</span> value=<span class="hljs-string">"11"</span>&gt;</span><br><span class="line">　　　　　　　　&lt;input type=<span class="hljs-string">"hidden"</span> name=<span class="hljs-string">"money"</span> value=<span class="hljs-string">"1000"</span>&gt;</span><br><span class="line">　　　　　　&lt;<span class="hljs-regexp">/form&gt;</span></span><br><span class="line"><span class="hljs-regexp">　　　　&lt;/i</span>frame&gt;</span><br><span class="line">　　&lt;<span class="hljs-regexp">/body&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
 <p>如果用户仍是继续上面的操作，很不幸，结果将会是再次不见1000块……因为这里危险网站B暗地里发送了POST请求到银行!</p>
 <p>　　总结一下上面3个例子，CSRF主要的攻击模式基本上是以上的3种，其中以第1,2种最为严重，因为触发条件很简单，一个<img>就可以了，而第3种比较麻烦，需要使用JavaScript，所以使用的机会会比前面的少很多，但无论是哪种情况，只要触发了CSRF攻击，后果都有可能很严重。</p>
 <p>　　理解上面的3种攻击模式，其实可以看出，CSRF攻击是源于WEB的隐式身份验证机制！WEB的身份验证机制虽然可以保证一个请求是来自于某个用户的浏览器，但却无法保证该请求是用户批准发送的！</p>
@@ -208,24 +208,24 @@
 <p>　　服务端的CSRF方式方法很多样，但总的思想都是一致的，就是在客户端页面增加伪随机数。</p>
 <p>　　(1).Cookie Hashing(所有表单都包含同一个伪随机值)：</p>
 <p>　　这可能是最简单的解决方案了，因为攻击者不能获得第三方的Cookie(理论上)，所以表单中的数据也就构造失败了:&gt;</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="meta">&lt;?php</span></span><br><span class="line">　　　　<span class="comment">//构造加密的Cookie信息</span></span><br><span class="line">　　　　$value = “DefenseSCRF”;</span><br><span class="line">　　　　setcookie(”cookie”, $value, time()+<span class="number">3600</span>);</span><br><span class="line">　　<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　　　<span class="hljs-comment">//构造加密的Cookie信息</span></span><br><span class="line">　　　　$value = “DefenseSCRF”;</span><br><span class="line">　　　　setcookie(”cookie”, $value, time()+<span class="hljs-number">3600</span>);</span><br><span class="line">　　<span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　在表单里增加Hash值，以认证这确实是用户发送的请求。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="meta">&lt;?php</span></span><br><span class="line">　　　　$hash = md5($_COOKIE[<span class="string">'cookie'</span>]);</span><br><span class="line">　　<span class="meta">?&gt;</span></span><br><span class="line">　　&lt;form method=”POST” action=”transfer.php”&gt;</span><br><span class="line">　　　　&lt;input type=”text” name=”toBankId”&gt;</span><br><span class="line">　　　　&lt;input type=”text” name=”money”&gt;</span><br><span class="line">　　　　&lt;input type=”hidden” name=”hash” value=”<span class="meta">&lt;?</span>=$hash;<span class="meta">?&gt;</span>”&gt;</span><br><span class="line">　　　　&lt;input type=”submit” name=”submit” value=”Submit”&gt;</span><br><span class="line">　　&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　　　$hash = md5($_COOKIE[<span class="hljs-string">'cookie'</span>]);</span><br><span class="line">　　<span class="hljs-meta">?&gt;</span></span><br><span class="line">　　&lt;form method=”POST” action=”transfer.php”&gt;</span><br><span class="line">　　　　&lt;input type=”text” name=”toBankId”&gt;</span><br><span class="line">　　　　&lt;input type=”text” name=”money”&gt;</span><br><span class="line">　　　　&lt;input type=”hidden” name=”hash” value=”<span class="hljs-meta">&lt;?</span>=$hash;<span class="hljs-meta">?&gt;</span>”&gt;</span><br><span class="line">　　　　&lt;input type=”submit” name=”submit” value=”Submit”&gt;</span><br><span class="line">　　&lt;/form&gt;</span><br></pre></td></tr></table></figure>
 <p>　　然后在服务器端进行Hash值验证</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">　　      <span class="keyword">if</span>(<span class="keyword">isset</span>($_POST[<span class="string">'check'</span>])) &#123;</span><br><span class="line">     　　      $hash = md5($_COOKIE[<span class="string">'cookie'</span>]);</span><br><span class="line">    　　 <span class="keyword">if</span>($_POST[<span class="string">'check'</span>] == $hash) &#123;</span><br><span class="line">         　　 doJob();</span><br><span class="line">　　           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">　　　　　　　　<span class="comment">//...</span></span><br><span class="line">    　　 &#125;</span><br><span class="line">　　      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">　　　　　　<span class="comment">//...</span></span><br><span class="line">　　      &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">'check'</span>])) &#123;</span><br><span class="line">     　　      $hash = md5($_COOKIE[<span class="hljs-string">'cookie'</span>]);</span><br><span class="line">    　　 <span class="hljs-keyword">if</span>($_POST[<span class="hljs-string">'check'</span>] == $hash) &#123;</span><br><span class="line">         　　 doJob();</span><br><span class="line">　　           &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">　　　　　　　　<span class="hljs-comment">//...</span></span><br><span class="line">    　　 &#125;</span><br><span class="line">　　      &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">　　　　　　<span class="hljs-comment">//...</span></span><br><span class="line">　　      &#125;</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　这个方法个人觉得已经可以杜绝99%的CSRF攻击了，那还有1%呢….由于用户的Cookie很容易由于网站的XSS漏洞而被盗取，这就另外的1%。一般的攻击者看到有需要算Hash值，基本都会放弃了，某些除外，所以如果需要100%的杜绝，这个不是最好的方法。<br>　　(2).验证码</p>
 <p>　　这个方案的思路是：每次的用户提交都需要用户在表单中填写一个图片上的随机字符串，厄….这个方案可以完全解决CSRF，但个人觉得在易用性方面似乎不是太好，还有听闻是验证码图片的使用涉及了一个被称为MHTML的Bug，可能在某些版本的微软IE中受影响。</p>
 <p>　　(3).One-Time Tokens(不同的表单包含一个不同的伪随机值)</p>
 <p>　　在实现One-Time Tokens时，需要注意一点：就是“并行会话的兼容”。如果用户在一个站点上同时打开了两个不同的表单，CSRF保护措施不应该影响到他对任何表单的提交。考虑一下如果每次表单被装入时站点生成一个伪随机值来覆盖以前的伪随机值将会发生什么情况：用户只能成功地提交他最后打开的表单，因为所有其他的表单都含有非法的伪随机值。必须小心操作以确保CSRF保护措施不会影响选项卡式的浏览或者利用多个浏览器窗口浏览一个站点。</p>
 <p>　　以下我的实现:</p>
 <p>　　1).先是令牌生成函数(gen_token())：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gen_token</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> 　　　　<span class="comment">//这里我是贪方便，实际上单使用Rand()得出的随机数作为令牌，也是不安全的。</span></span><br><span class="line">　　　　<span class="comment">//这个可以参考我写的Findbugs笔记中的《Random object created and used only once》</span></span><br><span class="line">     $token = md5(uniqid(rand(), <span class="keyword">true</span>));</span><br><span class="line">     <span class="keyword">return</span> $token;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_token</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"> 　　　　<span class="hljs-comment">//这里我是贪方便，实际上单使用Rand()得出的随机数作为令牌，也是不安全的。</span></span><br><span class="line">　　　　<span class="hljs-comment">//这个可以参考我写的Findbugs笔记中的《Random object created and used only once》</span></span><br><span class="line">     $token = md5(uniqid(rand(), <span class="hljs-keyword">true</span>));</span><br><span class="line">     <span class="hljs-keyword">return</span> $token;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>　　2).然后是Session令牌生成函数(gen_stoken())：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">gen_stoken</span><span class="params">()</span> </span>&#123;</span><br><span class="line">　　　　　　$pToken = <span class="string">""</span>;</span><br><span class="line">　　　　　　<span class="keyword">if</span>($_SESSION[STOKEN_NAME]  == $pToken)&#123;</span><br><span class="line">　　　　　　　　<span class="comment">//没有值，赋新值</span></span><br><span class="line">　　　　　　　　$_SESSION[STOKEN_NAME] = gen_token();</span><br><span class="line">　　　　　　&#125;    </span><br><span class="line">　　　　　　<span class="keyword">else</span>&#123;</span><br><span class="line">　　　　　　　　<span class="comment">//继续使用旧的值</span></span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_stoken</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">　　　　　　$pToken = <span class="hljs-string">""</span>;</span><br><span class="line">　　　　　　<span class="hljs-keyword">if</span>($_SESSION[STOKEN_NAME]  == $pToken)&#123;</span><br><span class="line">　　　　　　　　<span class="hljs-comment">//没有值，赋新值</span></span><br><span class="line">　　　　　　　　$_SESSION[STOKEN_NAME] = gen_token();</span><br><span class="line">　　　　　　&#125;    </span><br><span class="line">　　　　　　<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">　　　　　　　　<span class="hljs-comment">//继续使用旧的值</span></span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　3).WEB表单生成隐藏输入域的函数：　　</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">　　     <span class="function"><span class="keyword">function</span> <span class="title">gen_input</span><span class="params">()</span> </span>&#123;</span><br><span class="line">　　     gen_stoken();</span><br><span class="line">　　          <span class="keyword">echo</span> “&lt;input type=\”hidden\” name=\”<span class="string">" . FTOKEN_NAME . “\”</span></span><br><span class="line"><span class="string">     　　     value=\”"</span> . $_SESSION[STOKEN_NAME] . “\”&gt; “;</span><br><span class="line">　　&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">　　     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gen_input</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">　　     gen_stoken();</span><br><span class="line">　　          <span class="hljs-keyword">echo</span> “&lt;input type=\”hidden\” name=\”<span class="hljs-string">" . FTOKEN_NAME . “\”</span></span><br><span class="line"><span class="hljs-string">     　　     value=\”"</span> . $_SESSION[STOKEN_NAME] . “\”&gt; “;</span><br><span class="line">　　&#125;</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>　　4).WEB表单结构：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">     session_start();</span><br><span class="line">     <span class="keyword">include</span>(”functions.php”);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;form method=”POST” action=”transfer.php”&gt;</span><br><span class="line">     &lt;input type=”text” name=”toBankId”&gt;</span><br><span class="line">     &lt;input type=”text” name=”money”&gt;</span><br><span class="line">     <span class="meta">&lt;?</span> gen_input(); <span class="meta">?&gt;</span></span><br><span class="line">     &lt;input type=”submit” name=”submit” value=”Submit”&gt;</span><br><span class="line">&lt;/FORM&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">     session_start();</span><br><span class="line">     <span class="hljs-keyword">include</span>(”functions.php”);</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br><span class="line">&lt;form method=”POST” action=”transfer.php”&gt;</span><br><span class="line">     &lt;input type=”text” name=”toBankId”&gt;</span><br><span class="line">     &lt;input type=”text” name=”money”&gt;</span><br><span class="line">     <span class="hljs-meta">&lt;?</span> gen_input(); <span class="hljs-meta">?&gt;</span></span><br><span class="line">     &lt;input type=”submit” name=”submit” value=”Submit”&gt;</span><br><span class="line">&lt;/FORM&gt;</span><br></pre></td></tr></table></figure>
 <p>　　5).服务端核对令牌：</p>
 <p>　　这个很简单，这里就不再啰嗦了。</p>
 <p>　　上面这个其实不完全符合“并行会话的兼容”的规则，大家可以在此基础上修改。</p>
@@ -291,7 +291,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        30
                     </p>
                 </div>
             </div>
@@ -482,25 +482,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -568,6 +549,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
                     <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -597,25 +597,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -690,6 +671,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -705,7 +705,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Hexo" height="28">
+                    <img src="/images/logo.png" alt="Hexo" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -874,5 +874,5 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

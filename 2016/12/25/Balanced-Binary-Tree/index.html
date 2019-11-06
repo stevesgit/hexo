@@ -29,7 +29,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -79,7 +79,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Balanced_Binary_Tree" height="28">
+                <img src="/images/logo.png" alt="Balanced_Binary_Tree" height="28">
             
             </a>
         </div>
@@ -162,9 +162,9 @@
 <p>QuestionEditorial Solution  My Submissions<br>Total Accepted: 147366<br>Total Submissions: 408360<br>Difficulty: Easy<br>Contributors: Admin<br>Given a binary tree, determine if it is height-balanced.<br>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>Subscribe to see which companies asked this question</p>
 </blockquote>
 <p><strong>平衡二叉树：它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</strong><br>如何解决这道题目一个思路就是按照递归的思路去做。先去判读根节点的左右两边的深度差是否大于1，小于的话再去判断他的子树是否为平衡二叉树。这里就要借助递归。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public:</span><br><span class="line">        bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(root-&gt;left == NULL&amp;&amp;root-&gt;right == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(abs(depth(root-&gt;left)-depth(root-&gt;right))&gt;1)</span><br><span class="line">                return false;</span><br><span class="line">            return isBalanced(root-&gt;left)&amp;&amp;isBalanced(root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        int depth(TreeNode* root)&#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return 0;</span><br><span class="line">            return max(1+depth(root-&gt;left),1+depth(root-&gt;right));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public:</span><br><span class="line">        bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(root-&gt;left == NULL&amp;&amp;root-&gt;right == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(abs(depth(root-&gt;left)-depth(root-&gt;right))&gt;1)</span><br><span class="line">                return false;</span><br><span class="line">            return isBalanced(root-&gt;left)&amp;&amp;isBalanced(root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        int depth(TreeNode* root)&#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return 0;</span><br><span class="line">            return max(1+depth(root-&gt;left),1+depth(root-&gt;right));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
 <p>一开始我觉得这种算法很顺手的，思考的时候也很简单。但是我后来在leetcode上测了下时间有快20ms，就觉得有问题，原来一看这里又两层递归就是递归里面套递归，所以花费时间很长时间在这里面。<br>这种算法的时间复杂度为nlogn所以大量时间花费在了算书的深度上。<br>然后上网查了下有如下的算法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">        // write code here</span><br><span class="line">        int high=0;</span><br><span class="line">        return isBalance1(root,high);</span><br><span class="line">    &#125;</span><br><span class="line">    bool isBalance1(TreeNode* root,int &amp;high)</span><br><span class="line">    &#123;</span><br><span class="line">        if(root==NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            high=0;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        int lhigh,rhigh;</span><br><span class="line">        if(!isBalance1(root-&gt;left,lhigh)||!isBalance1(root-&gt;right,rhigh))</span><br><span class="line">            return false;</span><br><span class="line">        if(lhigh-rhigh&gt;1||lhigh-rhigh&lt;-1)</span><br><span class="line">            return false;</span><br><span class="line">        high=(lhigh&gt;=rhigh?lhigh:rhigh)+1;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">        // write code here</span><br><span class="line">        int high=0;</span><br><span class="line">        return isBalance1(root,high);</span><br><span class="line">    &#125;</span><br><span class="line">    bool isBalance1(TreeNode* root,int &amp;high)</span><br><span class="line">    &#123;</span><br><span class="line">        if(root==NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            high=0;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        int lhigh,rhigh;</span><br><span class="line">        if(!isBalance1(root-&gt;left,lhigh)||!isBalance1(root-&gt;right,rhigh))</span><br><span class="line">            return false;</span><br><span class="line">        if(lhigh-rhigh&gt;1||lhigh-rhigh&lt;-1)</span><br><span class="line">            return false;</span><br><span class="line">        high=(lhigh&gt;=rhigh?lhigh:rhigh)+1;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong>这种算法就用了一层递归，高度的递归在算平衡里面已经解决了，所以速度要比上面的要快。</strong></p>
 
         </div>
@@ -287,7 +287,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        30
                     </p>
                 </div>
             </div>
@@ -478,25 +478,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -564,6 +545,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
                     <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -593,25 +593,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -686,6 +667,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -701,7 +701,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Balanced_Binary_Tree" height="28">
+                    <img src="/images/logo.png" alt="Balanced_Binary_Tree" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -870,5 +870,5 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

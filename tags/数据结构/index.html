@@ -25,7 +25,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -75,7 +75,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Hexo" height="28">
+                <img src="/images/logo.png" alt="Hexo" height="28">
             
             </a>
         </div>
@@ -167,12 +167,12 @@
         <div class="content">
             <hr>
 <p><strong>今天做了一道题目，实现二叉搜索树的迭代，实际上就是一个实现二叉树的中序遍历。之前有做过二叉树的中序遍历但是依然想不起细节，三种遍历当中后续遍历最麻烦，光理解没用，二叉树的遍历很常见，所以他的遍历一定要记住。</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pre_order</span><span class="params">(TreeNode * root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">    stk.push(root);</span><br><span class="line">    <span class="keyword">while</span>(!stk.empty())&#123;</span><br><span class="line">        TreeNode* cur = stk.top();</span><br><span class="line">        stk.pop();</span><br><span class="line">        visit(cur);</span><br><span class="line">        <span class="keyword">if</span>(cur-&gt;right)</span><br><span class="line">            stk.push(cur-&gt;right);</span><br><span class="line">        <span class="keyword">if</span>(cur-&gt;left)</span><br><span class="line">            stk.push(cur-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//前序遍历</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pre_order</span><span class="hljs-params">(TreeNode * root)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">NULL</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">    stk.push(root);</span><br><span class="line">    <span class="hljs-keyword">while</span>(!stk.empty())&#123;</span><br><span class="line">        TreeNode* cur = stk.top();</span><br><span class="line">        stk.pop();</span><br><span class="line">        visit(cur);</span><br><span class="line">        <span class="hljs-keyword">if</span>(cur-&gt;right)</span><br><span class="line">            stk.push(cur-&gt;right);</span><br><span class="line">        <span class="hljs-keyword">if</span>(cur-&gt;left)</span><br><span class="line">            stk.push(cur-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="comment">//思路就是存在左儿子就压栈，不存在了就出栈，然后再把他的右儿子入栈再次压入右儿子的左儿子，压完了再出栈重复上面的。</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">in_order</span><span class="params">(TreeNode * root)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">    TreeNode *rootfirst = root;</span><br><span class="line">    <span class="keyword">while</span>(!stk.empty()||rootfirst == root)&#123;<span class="comment">//第一次为了让空stk能进入循环。</span></span><br><span class="line">    <span class="comment">//有左儿子就入栈。包括右儿子的左儿子</span></span><br><span class="line">        <span class="keyword">while</span>(root)&#123;</span><br><span class="line">            stk.push(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!stk.empty)&#123;</span><br><span class="line">            TreeNode cur = stk.top();</span><br><span class="line">            visit(cur);</span><br><span class="line">            stk.pop();</span><br><span class="line">            <span class="keyword">if</span>(cur-&gt;right)&#123;</span><br><span class="line">                stk.push(cur-&gt;right);</span><br><span class="line">                root = cur-&gt;right-&gt;left;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//中序遍历</span></span><br><span class="line"><span class="hljs-comment">//思路就是存在左儿子就压栈，不存在了就出栈，然后再把他的右儿子入栈再次压入右儿子的左儿子，压完了再出栈重复上面的。</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">in_order</span><span class="hljs-params">(TreeNode * root)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!root)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">    TreeNode *rootfirst = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(!stk.empty()||rootfirst == root)&#123;<span class="hljs-comment">//第一次为了让空stk能进入循环。</span></span><br><span class="line">    <span class="hljs-comment">//有左儿子就入栈。包括右儿子的左儿子</span></span><br><span class="line">        <span class="hljs-keyword">while</span>(root)&#123;</span><br><span class="line">            stk.push(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!stk.empty)&#123;</span><br><span class="line">            TreeNode cur = stk.top();</span><br><span class="line">            visit(cur);</span><br><span class="line">            stk.pop();</span><br><span class="line">            <span class="hljs-keyword">if</span>(cur-&gt;right)&#123;</span><br><span class="line">                stk.push(cur-&gt;right);</span><br><span class="line">                root = cur-&gt;right-&gt;left;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><a href="http://blog.csdn.net/feliciafay/article/details/10859407" target="_blank" rel="noopener">原地址</a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后续遍历 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span>  </span><br><span class="line"><span class="comment">//第一种，基于前序遍历进行修改  </span></span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; postorderTraversal(TreeNode *root) &#123;  </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;  </span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; node_stack;  </span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">NULL</span>)  </span><br><span class="line">            <span class="keyword">return</span> res;  </span><br><span class="line">        node_stack.push(root);  </span><br><span class="line">        TreeNode* cur=root;  </span><br><span class="line">        TreeNode* pre=<span class="literal">NULL</span>;  </span><br><span class="line">        <span class="keyword">while</span>(!node_stack.empty())&#123;  </span><br><span class="line">            cur=node_stack.top();  </span><br><span class="line">            <span class="keyword">if</span>((cur-&gt;left==<span class="literal">NULL</span>&amp;&amp;cur-&gt;right==<span class="literal">NULL</span>)||((pre!=<span class="literal">NULL</span>)&amp;&amp;(pre==cur-&gt;left || pre==cur-&gt;right))) &#123;  </span><br><span class="line">            <span class="comment">//为什么基于前序遍历改后序遍历，这里是 (pre==cur-&gt;left || pre==cur-&gt;right) 这两个条件？   </span></span><br><span class="line">            <span class="comment">//因为栈的构建顺序依次是cur, cur-&gt;right, cur-&gt;left,所以pre可能是左子树或右子树。  </span></span><br><span class="line">            <span class="comment">//如果基于中序遍历改后序遍历，则条件变为了(cur-&gt;right == pre)，因为中序遍历的栈的构建顺序是cur的左儿子，左左儿子，左左左儿子,cur-&gt;right。这个顺序说明pre只能是cur的右子树。  </span></span><br><span class="line">                res.push_back(cur-&gt;val);  </span><br><span class="line">                node_stack.pop();  </span><br><span class="line">                pre=cur;  </span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;  </span><br><span class="line">                <span class="keyword">if</span>(cur-&gt;right!=<span class="literal">NULL</span>)  </span><br><span class="line">                    node_stack.push(cur-&gt;right);  </span><br><span class="line">                <span class="keyword">if</span>(cur-&gt;left!=<span class="literal">NULL</span>)  </span><br><span class="line">                    node_stack.push(cur-&gt;left);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> res;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//后续遍历 </span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span>  </span><br><span class="line"><span class="hljs-comment">//第一种，基于前序遍历进行修改  </span></span><br><span class="line"><span class="hljs-keyword">public</span>:  </span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; postorderTraversal(TreeNode *root) &#123;  </span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;  </span><br><span class="line">        <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; node_stack;  </span><br><span class="line">        <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">NULL</span>)  </span><br><span class="line">            <span class="hljs-keyword">return</span> res;  </span><br><span class="line">        node_stack.push(root);  </span><br><span class="line">        TreeNode* cur=root;  </span><br><span class="line">        TreeNode* pre=<span class="hljs-literal">NULL</span>;  </span><br><span class="line">        <span class="hljs-keyword">while</span>(!node_stack.empty())&#123;  </span><br><span class="line">            cur=node_stack.top();  </span><br><span class="line">            <span class="hljs-keyword">if</span>((cur-&gt;left==<span class="hljs-literal">NULL</span>&amp;&amp;cur-&gt;right==<span class="hljs-literal">NULL</span>)||((pre!=<span class="hljs-literal">NULL</span>)&amp;&amp;(pre==cur-&gt;left || pre==cur-&gt;right))) &#123;  </span><br><span class="line">            <span class="hljs-comment">//为什么基于前序遍历改后序遍历，这里是 (pre==cur-&gt;left || pre==cur-&gt;right) 这两个条件？   </span></span><br><span class="line">            <span class="hljs-comment">//因为栈的构建顺序依次是cur, cur-&gt;right, cur-&gt;left,所以pre可能是左子树或右子树。  </span></span><br><span class="line">            <span class="hljs-comment">//如果基于中序遍历改后序遍历，则条件变为了(cur-&gt;right == pre)，因为中序遍历的栈的构建顺序是cur的左儿子，左左儿子，左左左儿子,cur-&gt;right。这个顺序说明pre只能是cur的右子树。  </span></span><br><span class="line">                res.push_back(cur-&gt;val);  </span><br><span class="line">                node_stack.pop();  </span><br><span class="line">                pre=cur;  </span><br><span class="line">            &#125;<span class="hljs-keyword">else</span>&#123;  </span><br><span class="line">                <span class="hljs-keyword">if</span>(cur-&gt;right!=<span class="hljs-literal">NULL</span>)  </span><br><span class="line">                    node_stack.push(cur-&gt;right);  </span><br><span class="line">                <span class="hljs-keyword">if</span>(cur-&gt;left!=<span class="hljs-literal">NULL</span>)  </span><br><span class="line">                    node_stack.push(cur-&gt;left);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="hljs-keyword">return</span> res;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -234,7 +234,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        30
                     </p>
                 </div>
             </div>
@@ -425,25 +425,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -511,6 +492,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
                     <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -540,25 +540,6 @@
         
         <article class="media">
             
-            <a href="/2019/11/06/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
-                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -633,6 +614,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
+                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -648,7 +648,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Hexo" height="28">
+                    <img src="/images/logo.png" alt="Hexo" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -817,5 +817,5 @@ document.addEventListener('DOMContentLoaded', function () {
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

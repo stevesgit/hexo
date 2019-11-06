@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Hexo</title>
+
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;3&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Hexo" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于我</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;" target="_blank" rel="noopener">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-01-18T08:22:16.000Z">2017-01-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 168 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/01/18/invert-tree/">invert_tree</a>
+            
+        </h1>
+        <div class="content">
+            <p>Invert a binary tree.</p>
+<pre><code>     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9</code></pre><p>to</p>
+<pre><code>     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1</code></pre><p>Trivia:<br>This problem was inspired by this original tweet by Max Howell:</p>
+<blockquote>
+<p>Google: 90% of our engineers use the software you wrote (Homebrew),<br>but you can’t invert a binary tree on a whiteboard so fuck off.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Subscribe to see which companies asked this question</span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    TreeNode* invertTree(TreeNode* root) &#123;</span><br><span class="line">        if(root == NULL)</span><br><span class="line">            return NULL;</span><br><span class="line">        root-&gt;left =  invertTree(root-&gt;left);</span><br><span class="line">        root-&gt;right =  invertTree(root-&gt;right);</span><br><span class="line">        TreeNode *tmp = root-&gt;left;</span><br><span class="line">        root-&gt;left = root-&gt;right;</span><br><span class="line">        root-&gt;right = tmp;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>这到题目不难，主要用了递归的思想，反转二叉树就是每个节点下的左右儿子，我们需要从他的最下面开始反转，这里用递归就很合适。</strong></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-01-08T13:12:47.000Z">2017-01-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 624 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/01/08/binary-tree/">二叉树的一些特点</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
+<li>第i层的节点数为 2^(i-1);</li>
+<li>深度为k的节点数为2^k-1 (k&gt;=1);</li>
+<li>n0=n2+1 n0为度为0的节点就是叶节点，n2为度为2的节点</li>
+<li>n个节点数，则深度为(log2n)+1</li>
+<li>①如果i&gt;1,双亲节点就是i/2;②2i&gt;n结点i无左儿子，否则左孩子节点是2i;③2i+1&gt;n则节点没有右孩子，否则右<br>孩子为2i+1;</li>
+</ol>
+<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><p>二叉树有前序遍历，中序遍历和后续遍历。<br><img src="http://www.gocalf.com/blog/images/2012/04/bin-tree.png" alt="示例图（来源）"><br>如上图所示的一棵二叉树，对应的遍历结果分别是：</p>
+<ol>
+<li>前序（NLR）：<code>A B D C E G H F I</code></li>
+<li>中序（LNR）：<code>D B A G E H C F I</code></li>
+<li>后序（LRN）：<code>D B G H E I F C A</code></li>
+<li>层序：<code>A B C D E F G H I</code></li>
+</ol>
+<h4 id="按照程序的思想去理解这三种遍历"><a href="#按照程序的思想去理解这三种遍历" class="headerlink" title="按照程序的思想去理解这三种遍历"></a>按照程序的思想去理解这三种遍历</h4><p><strong>前序遍历</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//先序遍历左子树</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//先序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>中序遍历</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//中序遍历左子树</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//中序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>后序遍历</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//后序遍历左子树</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//后序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="推导遍历结果"><a href="#推导遍历结果" class="headerlink" title="推导遍历结果"></a>推导遍历结果</h3><blockquote>
+<p>已知前序遍历为ABCDEF 中序遍历为CBAEDF 求后序遍历结果</p>
+</blockquote>
+<p>因为先序遍历可以知道根节点，中序遍历可以知道左右树。<br>所以A为根，CB为左子树，EDF为右子树。<br>CB当中B为根,B为A的左儿子，C为B的儿子，因为在中序遍历中C先打印做C为B的左儿子。<br>DEF中D为根，E为D的左儿子，F为右儿子。<br>图1<br><img src="http://ww2.sinaimg.cn/mw690/7503dc51gw1fbjes9a7bjj20aj09hjsj.jpg" alt="图1"><br>图2<br><img src="http://ww1.sinaimg.cn/mw690/7503dc51gw1fbjerhzzb5j20d30avabp.jpg" alt="图2"><br>图3<br><img src="http://ww1.sinaimg.cn/mw690/7503dc51gw1fbjeujzyghj20ey0cdgnv.jpg" alt="图3"></p>
+<blockquote>
+<p>已知中序是ABCDEFG,后续是BDCAFGE,求先序遍历的结果。</p>
+</blockquote>
+<p>根节点可以通过后续得知，中序知道左右子树，所以可以求出先序。<br>结果为EACBDGF<br>注意：前序遍历和后续遍历结果知道不能求出中序，因为两者都是只能得出根节点，左右子树不能确定。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-01-08T13:06:27.000Z">2017-01-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 376 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/01/08/path-sum-III/">path_sum_III</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>You are given a binary tree in which each node contains an integer value.<br>Find the number of paths that sum to a given value.<br>The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).<br>The tree has no more than 1,000 nodes and the values are in the range -1,000,000 to 1,000,000.</p>
+</blockquote>
+<pre><code>root = [10,5,-3,3,2,null,11,3,-2,null,1], sum = 8
+
+      10
+     /  \
+    5   -3
+   / \    \
+  3   2   11
+ / \   \
+3  -2   1
+
+Return 3. The paths that sum to 8 are:
+
+1.  5 -&gt; 3
+2.  5 -&gt; 2 -&gt; 1
+3. -3 -&gt; 11</code></pre><p><strong>题目就是求和为8的向下的路径数</strong><br>1，2，3，4，5是连续的五段路程不能跳过。如果想到站点5到达各地有几条路程，<code>5-&gt;4-&gt;3-&gt;2-&gt;1</code> ，<code>5-&gt;4-&gt;3-&gt;2</code>，<code>5-&gt;4-&gt;3</code>，<br><code>5-&gt;4</code>，有四条路径。找和为8的路径只是多加了个条件。首先我们以root为节点，向下查找，再以root的左右儿子为节点查找，然后左右儿子又以自己的左右儿子为节点向下查找。所以用递归来完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int pathSum(TreeNode* root, int sum) &#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        if(root == NULL)</span><br><span class="line">            return res;</span><br><span class="line">        return dfs(root,sum)+pathSum(root-&gt;left,sum)+pathSum(root-&gt;right,sum);</span><br><span class="line">    &#125;</span><br><span class="line">    int dfs(TreeNode* root,int sum)&#123;</span><br><span class="line">        int res = 0;</span><br><span class="line">        if(root == NULL)</span><br><span class="line">            return res;</span><br><span class="line">        if(root-&gt;val == sum)</span><br><span class="line">            res++;</span><br><span class="line">        res+= dfs(root-&gt;left,sum-root-&gt;val);</span><br><span class="line">        res+= dfs(root-&gt;right,sum-root-&gt;val);</span><br><span class="line">        return res;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这里的深度搜索dfs和下面求平衡二叉树时的depth是类似的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public:</span><br><span class="line">        bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(root-&gt;left == NULL&amp;&amp;root-&gt;right == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(abs(depth(root-&gt;left)-depth(root-&gt;right))&gt;1)</span><br><span class="line">                return false;</span><br><span class="line">            return isBalanced(root-&gt;left)&amp;&amp;isBalanced(root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        int depth(TreeNode* root)&#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return 0;</span><br><span class="line">            return max(1+depth(root-&gt;left),1+depth(root-&gt;right));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-25T10:15:38.000Z">2016-12-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 475 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/12/25/Balanced-Binary-Tree/">Balanced_Binary_Tree</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="判断是否是平衡二叉树"><a href="#判断是否是平衡二叉树" class="headerlink" title="判断是否是平衡二叉树"></a>判断是否是平衡二叉树</h1><blockquote>
+<p>QuestionEditorial Solution  My Submissions<br>Total Accepted: 147366<br>Total Submissions: 408360<br>Difficulty: Easy<br>Contributors: Admin<br>Given a binary tree, determine if it is height-balanced.<br>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>Subscribe to see which companies asked this question</p>
+</blockquote>
+<p><strong>平衡二叉树：它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</strong><br>如何解决这道题目一个思路就是按照递归的思路去做。先去判读根节点的左右两边的深度差是否大于1，小于的话再去判断他的子树是否为平衡二叉树。这里就要借助递归。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public:</span><br><span class="line">        bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(root-&gt;left == NULL&amp;&amp;root-&gt;right == NULL)</span><br><span class="line">                return true;</span><br><span class="line">            if(abs(depth(root-&gt;left)-depth(root-&gt;right))&gt;1)</span><br><span class="line">                return false;</span><br><span class="line">            return isBalanced(root-&gt;left)&amp;&amp;isBalanced(root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        int depth(TreeNode* root)&#123;</span><br><span class="line">            if(root == NULL)</span><br><span class="line">                return 0;</span><br><span class="line">            return max(1+depth(root-&gt;left),1+depth(root-&gt;right));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<p>一开始我觉得这种算法很顺手的，思考的时候也很简单。但是我后来在leetcode上测了下时间有快20ms，就觉得有问题，原来一看这里又两层递归就是递归里面套递归，所以花费时间很长时间在这里面。<br>这种算法的时间复杂度为nlogn所以大量时间花费在了算书的深度上。<br>然后上网查了下有如下的算法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isBalanced(TreeNode* root) &#123;</span><br><span class="line">        // write code here</span><br><span class="line">        int high=0;</span><br><span class="line">        return isBalance1(root,high);</span><br><span class="line">    &#125;</span><br><span class="line">    bool isBalance1(TreeNode* root,int &amp;high)</span><br><span class="line">    &#123;</span><br><span class="line">        if(root==NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            high=0;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        int lhigh,rhigh;</span><br><span class="line">        if(!isBalance1(root-&gt;left,lhigh)||!isBalance1(root-&gt;right,rhigh))</span><br><span class="line">            return false;</span><br><span class="line">        if(lhigh-rhigh&gt;1||lhigh-rhigh&lt;-1)</span><br><span class="line">            return false;</span><br><span class="line">        high=(lhigh&gt;=rhigh?lhigh:rhigh)+1;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>这种算法就用了一层递归，高度的递归在算平衡里面已经解决了，所以速度要比上面的要快。</strong></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-24T05:48:58.000Z">2016-12-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/TCP-IP/">TCP/IP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    11 minutes read (About 1626 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/12/24/%E7%BD%91%E7%BB%9C%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%9E%E6%8E%A5/">网络之间的连接</a>
+            
+        </h1>
+        <div class="content">
+            <p>主要研究了一下一次完整的网络请求所经历的几个步骤对OSI模型的二三层，特别是在数据链路层传中的ARP进行了初步的认知。<br>  大致可以看下这段文字</p>
+<blockquote>
+<p>主机A的IP地址为192.168.1.1，MAC地址为0A-11-22-33-44-01；<br>主机B的IP地址为192.168.1.2，MAC地址为0A-11-22-33-44-02；<br>当主机A要与主机B通信时，地址解析协议可以将主机B的IP地址（192.168.1.2）解析成主机B的MAC地址，以下为工作流程：<br>第1步：根据主机A上的路由表内容，IP确定用于访问主机B的转发IP地址是192.168.1.2。然后A主机在自己的本地ARP缓存中检查主机B的匹配MAC地址。<br>第2步：如果主机A在ARP缓存中没有找到映射，它将询问192.168.1.2的硬件地址，从而将ARP请求帧广播到本地网络上的所有主机。源主机A的IP地址和MAC地址都包括在ARP请求中。本地网络上的每台主机都接收到ARP请求并且检查是否与自己的IP地址匹配。如果主机发现请求的IP地址与自己的IP地址不匹配，它将丢弃ARP请求。<br>第3步：主机B确定ARP请求中的IP地址与自己的IP地址匹配，则将主机A的IP地址和MAC地址映射添加到本地ARP缓存中。<br>第4步：主机B将包含其MAC地址的ARP回复消息直接发送回主机A。<br>第5步：当主机A收到从主机B发来的ARP回复消息时，会用主机B的IP和MAC地址映射更新ARP缓存。本机缓存是有生存期的，生存期结束后，将再次重复上面的过程。主机B的MAC地址一旦确定，主机A就能向主机B发送IP通信了。</p>
+</blockquote>
+<p>也就是说我们通信的时候不管怎么样都是需要获取Mac地址的，在同一个网络下可以直接使用ARP协议发送一个数据包。但是在不同的子网络下就是交给网关去处理。比如子网A下的a主机放送给子网B下的c数据时该怎么办呢？需要用到ARP协议吗。答案是肯定的。首先a找到网关的时候就要发送数据给网关，这里需要知道网关的ip地址和网关的mac地址，获取网关的mac地址就需要用到ARP协议，然后网关需要找到发送数据目的地建立连接，那么就又需要和子网B的网关建立连接发送数据，这里需要用到arp吗？那就看需要看第二层传递方式如果是以太网就需要用到ARP，如果是其他的传递方式可能就不需要（反正知道如果是），所以决定是否需要ARP，是由二层封装方式决定的。但是到了这里怎么和公网相连呢？如果是以太网就可能做一次广播，广播给他所在局域网内的网关。可能会通过多次路由转换到达目的地。<br>A-R1-R2-R3-B<br>A想要找到B，则只知道B的ip地址和自己的ip地址，对于A来说，B不在本地的链路上（B与A不属于同一个子网）则数据就交给路由器（网关）来处理。如果网关mac地址在本地ARP缓存中就直接连，如果没有就发起arp请求。到了R2收到数据包进行拆解，要找的IP地址是B，又不在自己的子网下，就交给R1的网关R2来处理，R2收到后重复前面的步骤交给网关R3，R3收到数据发现是在自己的子网下，就交给B来处理。<br>但是这里的原地址和目标地址是不会变得。<br>如果路由器实现NAT功能的话就是以下模式：<br>就比如是这个样子的：<br>A(10.1.1.2)—-|<br>B(10.1.1.3) —|<br>C(10.1.1.4)—| -GW(1.1.1.1)-Internet -Server 2.2.2.2</p>
+<p>A 使用TCP Port 1025 访问 server TCP 80<br>B 使用TCP Port 1025 访问 server TCP 80<br>C 使用TCP Port 2000 访问 server TCP 443</p>
+<p>Gateway 上的NAT table 如下：<br>10.1.1.2 + TCP 1025 &lt;—-&gt; 1.1.1.1 + TCP 1025<br>10.1.1.3 + TCP 1025 &lt;—-&gt; 1.1.1.1 + TCP 1026<br>10.1.1.4 + TCP 2000 &lt;—-&gt; 1.1.1.1 + TCP 1027<br>通过以上IP地址+ TCP端口号的映射，Gateway 可以唯一区分任何一个host。</p>
+<p><strong>注意这里A的数据到了网关（路由器）之后，网关（路由器）会对数据进行处理，把发送端的ip地址从A的ip地址改为网关的公网ip地址，再去发送数据包给其他的路由器。其他的路由器如果收到数据包，如果仍需要转发的话，依然需要把发送端的ip改为本公网的ip地址。那他们以自己的公网ip发送之后怎么如何区分数据是给谁的呢（毕竟每个公网下的子网都有很多ip地址）？那就是用到了上面的NAT table，做一个映射关系。</strong><br>所以路由器使用NAT功能和不使用的时候数据包中的源IP地址是有不同的，一个是永远不变，NAT功能的话转发时源IP地址改为自己的公网IP。<br>以上仅为个人认知，仅供参考，若存在纰漏，欢迎指出，因为网络这块内容不是三言两语能解释完的，但是大致的思路就是这样子。<br><strong>推荐几篇文章加深理解：</strong><br><a href="http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html" target="_blank" rel="noopener">阮一峰的网络协议入门（一）</a><br><a href="http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html" target="_blank" rel="noopener">阮一峰的网络协议入门（二）</a><br><a href="http://www.h3c.com.cn/MiniSite/Technology_Circle/Technology_Column/ICG/ICG_Technology/201001/662399_97665_0.htm" target="_blank" rel="noopener">关于NAT理解</a><br><a href="https://www.zhihu.com/question/49337715" target="_blank" rel="noopener">关于ARP协议的知乎讨论</a><br><a href="http://blog.csdn.net/tennysonsky/article/details/45226275" target="_blank" rel="noopener">内网和外网之间的通信</a><br><a href="http://dengqi.blog.51cto.com/5685776/1223132" target="_blank" rel="noopener">MAC地址表、ARP缓存表以及路由表</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-21T15:13:52.000Z">2016-12-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E5%8D%8F%E8%AE%AE/">协议</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes read (About 1331 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/12/21/%E5%85%B3%E4%BA%8ECGI/">CGI,FastCGI,PHP-CGI,PHP-FPM重识</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="CGI-FastCGI-PHP-CGI-PHP-FPM"><a href="#CGI-FastCGI-PHP-CGI-PHP-FPM" class="headerlink" title="CGI,FastCGI,PHP-CGI,PHP-FPM"></a>CGI,FastCGI,PHP-CGI,PHP-FPM</h1><hr>
+<blockquote>
+<p>之前研究了下一次完整的Web请求涉及到的过程，今天在学Java的JSP的时候就突然想起来想好好总结一下PHP的CGI有关的知识，之前看过好几遍CGI但是过一段时间总是忘记，又由于重新学习了一遍Web协议，这次再看也许会焕然一新。</p>
+</blockquote>
+<h3 id="CGI出现原因"><a href="#CGI出现原因" class="headerlink" title="CGI出现原因"></a>CGI出现原因</h3><p>浏览器通过http协议向服务器请求一个资源时，如果这个请求是静态（图片，html，mp3,pdf…）,我们的HTTP<br>Server(Nginx,Apache)能直接根据地址通过HTTP相应（Response）请求。但是我们访问的资源不可能只是静态的，如果是想访问动态的资源时怎么处理呢？Nginx服务器本身是处理不了的，他只能交给（应用服务器）Application Server来处理。但有一个问题Nginx服务器怎么和应用服务器通信呢，大家互相都不认识。为了解决这个问题，CGI就出现了。</p>
+<h3 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h3><blockquote>
+<p>通用网关接口（Common Gateway Interface/CGI）是一种重要的互联网技术，可以让一个客户端，从网页浏览器向执行在网络服务器上的程序请求数据。CGI描述了服务器和请求处理程序之间传输数据的一种标准。</p>
+</blockquote>
+<p>上面是Wiki上关于CGI的解释，也就是说他是一种协议。<br>我们看下CGI的特点，接着上面的当HTTP Service(nginx，Apache)接收到请求处理index.php的时候，他把这个请求交给了实现了CGI协议的<code>CGI解释器进程</code>，接下来解释器进程会解析php.ini文件，初始化执行环境，然后处理请求，再以规定CGI规定的格式返回处理后的结果，退出进程。下一个请求来时再创建新进程。这里存在一个问题就是当我执行完index.php后我想访问next.php时会重复前面的<code>解析php.ini文件，初始化执行环境</code>而且每次请求的时候他会启动一个进程，当多个请求同时来的时候会同时启动多个进程会给服务器带来压力。<br>综上CGI解释器进程的缺点是做一些重复工作，进程进来执行完后退出，利用率低。为了解决这几个问题出现了新的协议CGI的升级版Fast-CGI</p>
+<h3 id="Fast-CGI"><a href="#Fast-CGI" class="headerlink" title="Fast-CGI"></a>Fast-CGI</h3><p>FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一次(这是CGI最为人诟病的fork-and-execute 模式)。它还支持分布式的运算, 即 FastCGI 程序可以在网站服务器以外的主机上执行并且接受来自其它网站服务器来的请求。</p>
+<p>FastCGI是语言无关的、可伸缩架构的CGI开放扩展，其主要行为是将CGI解释器进程保持在内存中并因此获得较高的性能。众所周知，CGI解释器的反复加载是CGI性能低下的主要原因，如果CGI解释器保持在内存中并接受FastCGI进程管理器调度，则可以提供良好的性能、伸缩性、Fail- Over特性等等。</p>
+<h3 id="PHP-CGI"><a href="#PHP-CGI" class="headerlink" title="PHP-CGI"></a>PHP-CGI</h3><p>一开始一看名字我以为PHP-CGI是一个实现CGI协议的CGI进程，但其实不是，他是实现了FastCGI协议的进程。PHP-CGI是PHP内置的，PHP本身应该是没有实现CGI协议的进程（因为这个太落后了）。</p>
+<p>PHP-CGI与PHP-FPM一样，也是一个fastcgi进程管理器，PHP-CGI的问题在于 1、PHP-CGI变更php.ini配置后需重启PHP-CGI才能让新的php-ini生效，不可以平滑重启 2、直接杀死php-cgi进程,php就不能运行了。(PHP-FPM和Spawn-FCGI就没有这个问题,守护进程会平滑从新生成新的子进程。） 针对PHP-CGI的不足，PHP-FPM应运而生。</p>
+<h3 id="PHP-FPM"><a href="#PHP-FPM" class="headerlink" title="PHP-FPM"></a>PHP-FPM</h3><p>PHP-FPM是一个PHP FastCGI管理器，是只用于PHP的，使用PHP-FPM来控制PHP-CGI的FastCGI进程，它负责管理一个进程池，来处理来自Web服务器的请求。可以在 <a href="http://php-fpm.org/download" target="_blank" rel="noopener">http://php-fpm.org/download</a> 下载得到。</p>
+<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>PHP-FPM的使用非常方便，配置都是在PHP-FPM.ini的文件内，而启动、重启都可以从php/sbin/PHP-FPM中进行。更方便的是修改php.ini后可以直接使用PHP-FPM reload进行加载，无需杀掉进程就可以完成php.ini的修改加载。使用PHP-FPM可以使PHP有不小的性能提升。PHP-FPM控制的进程CPU回收的速度比较慢，内存分配的很均匀。</p>
+<p><strong>参考</strong></p>
+<ol>
+<li><a href="http://www.jianshu.com/p/571c474279af" target="_blank" rel="noopener">WEB请求处理三涉及到CGI部分
+</a></li>
+<li><a href="https://segmentfault.com/q/1010000000256516" target="_blank" rel="noopener">segmentfault尹川的回答
+</a></li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-19T04:26:45.000Z">2016-12-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 207 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/12/19/sameTree/">SameTree</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="Same-Tree"><a href="#Same-Tree" class="headerlink" title="Same Tree"></a>Same Tree</h1><hr>
+<blockquote>
+<p>Given two binary trees, write a function to check if they are equal or not.<br>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.<br>Subscribe to see which companies asked this question</p>
+</blockquote>
+<p>题目就是判断两颗树是不是相同的树。<br>解决思路：依次去判断这棵树的每个节点，是否存在这个节点，每个节点的值是否一样，然后他的子节点是否相同是否遵循以上规则。这就可以用递归来做。<br>时间复杂度O(n),空间复杂度O(logn)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * Definition for a binary tree node.</span><br><span class="line">  * struct TreeNode &#123;</span><br><span class="line">  *     int val;</span><br><span class="line">  *     TreeNode *left;</span><br><span class="line">  *     TreeNode *right;</span><br><span class="line">  *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line">  * &#125;;</span><br><span class="line">  */</span><br><span class="line"> class Solution &#123;</span><br><span class="line"> public:</span><br><span class="line">     bool isSameTree(TreeNode* p, TreeNode* q) &#123;</span><br><span class="line">         if(p == NULL&amp;&amp;q == NULL)</span><br><span class="line">             return true;</span><br><span class="line">         if(p == NULL||q == NULL)</span><br><span class="line">             return false;</span><br><span class="line">         if(p-&gt;val != q-&gt;val)</span><br><span class="line">             return false;</span><br><span class="line">         return isSameTree(p-&gt;left,q-&gt;left)&amp;&amp;isSameTree(p-&gt;right,q-&gt;right);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-05T07:59:18.000Z">2016-12-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">C&数据结构</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 797 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/12/05/C-12-5/">指针实现二维数组</a>
+            
+        </h1>
+        <div class="content">
+            <p>早上解决了昨天的那个队列的问题，结果发现错误的原因是出队列的那个函数存在着问题，具体的原因是那个队列的头是不应该存任何数据的，如果队列要换头的话就应该是<code>front-&gt;next</code>作为换头的语句<code>Q-&gt;front-&gt;next=p-&gt;next</code> 而不是之前的<code>Q-&gt;front = p-&gt;next</code>。中间调试了很久一直调试不出来，C出现的问题的时候，虽然可以调试，但是调试的时候很难看出问题，需要一步步仔细的检查。然后就是研究了下指针数组，数组指针，用指针实现数组。也就是昨天的那一块用数组的方式实现层序遍历。具体代码如下。<br><code>// 分配内存
+    struct TreeNode* ** traversalNode = (struct TreeNode* **)malloc(*returnSize * sizeof(struct TreeNode* *));
+        int **traversalVal = (int**)malloc(*returnSize * sizeof(int*));
+            *columnSizes = (int*)malloc(*returnSize * sizeof(int));</code><br>                指针一开始不容易理解，但只要理解了，其实这三种格式都是一样的，就是在分配内存，先说最简单的就是最下面的那一行代码，这就是一个一唯数组，首先就是开一块能存储8个int的大小的空间，然后把指向该空间的首地址传递给 <code>*columnSizes</code>,然后我们访问数组的每一个元素就<code>*columnSizes[0]~*columnSizes[7]</code>访问。平常我们说数组就是指针，<code>int a[5];*a, *(a+1);</code>可以这样转化。当然我觉得<code>*(*columnSizes+1)</code>也可实现。<br>                再来说上面的那几行，其实也是一样的，无非这里开辟内存的空间变成了int<em>,然后这里面存了比如说有`8 * sizeof(int</em>)<code>,同理是开辟了一块存储</code>8<em>int<em><code>大小的地址这可以时说是我们二维数组中的第一维度的存储空间。然后把这个存储空间的首地址赋值给了</code>int *</em>traversalVal<code>。但是这里要考虑到一个问题，我们为什么要这样做，和int a[9][10]有什么区别吗?好了问题来了，当我们这样做有什么不同吗？答案是有，目前我能想到的就是，这样做能够更好的利用空间。怎么说呢，他能保证数组的每块空间都能利用到。（因为我们在操作的时候只知道一个树的深度，但不知道树每层有多少个节点），也就是说我们只能确定a[n]数组的第一个维度。当我们需要确定数组的第二个维度的时候，只需要</code>traversalVal[0] = (int</em>)malloc(n * sizeof(int));<code>这句话的意思就是说把存了这么多n*int存储空间的首地址指向给traversalVal[0];现在这块内容就变成了n个int的首地址了（就是说traversalVal[0]是这块内容的指针，指向这块内容的地址）。然后也就是说</code>traversalVal[n]`指向的内容（内容只要是Int就行，多大的int不做限制）的地址。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-12-02T17:08:00.000Z">2016-12-03</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 minutes read (About 2103 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/12/03/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%AE%9E%E4%B9%A0%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%9C%88/">实习的那两个月</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="两个月工作总结（9-22-11-30）"><a href="#两个月工作总结（9-22-11-30）" class="headerlink" title="两个月工作总结（9.22-11.30）"></a>两个月工作总结（9.22-11.30）</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>暑假一直在找实习，可是一直碰壁，第一网上找公司，没有经验，唯一去的两家都是培训机构，无奈在家学习了一个暑假。9月初， 暑假结束，我从家里出来找实习，那个时候学校里还是有很多课的（我们这专业就是这么变态），但是我觉得这些课都没什么用，就毅然决定出来找工作了。当时想的无非是，自己在家看书，都是些书本上的东西，实战的还是有缺乏。然后网上就找到了一家公司A，进去面试了，面试官是个干了10年的大牛，算是这家小公司的CTO，笔试的都是些比较基础的，涉及到一些前端的知识点。那场面试呢，面试官考我的也是很基础的东西，首先就是开发环境,我毫不犹豫的说我是MNMP环境，然后他接着问，是怎么安装这些环境的。我就说都很简单啊，就是用Brew安装的，还有Mysql可以下载一个安装包安装。他继续追问，那如果我要安装在一个指定的目录下，怎么办。当时我，一脸懵逼，用惯了Brew，一切都是固定的目录文件夹，确实没有考虑过指定的文件夹，安装，现在想来无非就是编译安装，with指定一下位置。然后他继续追问了一些HTTP的问题，TCP/IP和HTTP的关系，我当时还说错了这两者的依附关系，说TCP/IP属于HTTP，现在想来我暑假那段时间都做了点什么事情啊。再然后就说了点，关于PHP的正则的一些问题，贪婪匹配和严格匹配吧，也没解答好。这是我面的第一家公司，后来面进了，干了两天就不干不了，那个公司只有一个技术大牛，然后前后端一起做，也就是PHP也要干前端的活，还有就是技术氛围太差了。</p>
+</blockquote>
+<hr>
+<p>离开了第一家实习的公司不久，我就获得了一家150团队的中小型公司B的面试机会，去面试前我还准备好好复习一下面试的基本知识。然后第二天一大早我就去面试了，那家公司一进去就是两大排，中间是过道，我看了下给人一种蛮好的技术氛围。进入面试环节，面试官上来看了下我的简历，还是老规矩，自我介绍一下。我感觉每次在自我介绍环节，都是很尴尬的状态，我说我本不是计算机专业，大学读的专业偏硬件，但是自学这个有一段时间了，对技术充满了兴趣。（真的好干）然后就是说一些项目经验什么的，我说项目经验目前还是没有，但是自己做过一个小论坛，博客之类的东西，然后部署在阿里云服务器上，在线上环境，可以给你看下，之后他就略微的看了下。（当时我对我的作品还是比较满意，但是现在想想那东西真不值得拿出手）。面试官接着问了技术的问题，问我关于mysql的Left Join特点和Join 的区别，我就回答了他。紧接着，问了我关于接口和抽象类的区别，我就开始处于模糊的状态，我说抽象类和接口是一个可以继承多个，一个不可以。然后他回答说，想让我说的不是这个点，是使用时候的区别。我答不上来，学艺不精啊。现在想想抽象类和接口确实区别还蛮大的，但当时学的时候没有充分的去分析和总结，这些确实做的不够。这些问题问的都是最最基础的，之后就问了点关于环境的问题，问我用什么编程软件，什么环境下编程什么的…面试结束，对自己感觉只能打70分，我给自己找了个借口是暑假一直在研究C和数据结构，php面向对象和一些myql确实没有深入的研究。但现在看来是不不成立的，这些真的是借口。<br>但是终究，我还是进了这家公司，进去的时候一共有三个实习生，就我一个是本地的，其他都是江西的，一个已经干了一个月了，另外一个比我早来一天。</p>
+<p>刚进来的时候，不知道做点什么，光搭环境就花了一天，公司用的环境是PHP7+Nginx+Mysql5.7+Centos6,就这点东西，我在Win下搭了大半个工作日，还是基于虚拟机的。后来也不知道咋弄的，坐在我旁边的同事HY就和我说，其实我们公司大多数环境都是用Docker的。额…然后又切换到Docker工作了一段时间。<br>一开始，其实我的项目经理给我的时间是大概两个礼拜适应环境（这是我后来知道的，他们的态度是两个礼拜适应不了走人），其实我压根就不需要这么长时间，因为Laravel框架我早就会了，只需要几天时间回顾一下就可以了，但是我没有主动去接收任务，我研究了下公司的源码，甚至还想看Laravel的源码，研究一下，回头看，那段看源码的时间，确实是效率不高但有花时间的一段时期。索性时间不长，大概就是两个礼拜。然后就被安排任务了，第一个任务是跟着ZHL一起迁移API，其实迁移API怎么说呢，说简单也简单，想简单了就是复制粘贴的事，但我还是有去了解那些业务逻辑的。第一个貌似是一个detail详情的API，做的时候也是糊里糊涂的，讨教了ZHL很久，最终才解决了，有了第一个，下面就得心应手了，接连做了好几个也不费力。之后就是做了一个金融的后台接口，再之后就是举报API了。金融后台因为学校考试的原因，本来项目经理考虑要给其他人做的，我接了下来，以为我想学更多的东西嘛。最后还是赶着完成了这个项目，第一次做这个确实感觉经验很缺乏，很多东西都是中途加上去，边和前端调试变修改的。再就是我感觉做的最失败的东西了，举报的API，听需求的时候，当时因为后台接口和APP接口有点类似，总以为一些需求不是自己的需求，也觉得这个东西很简单，但是做着做着却发现，越做越复杂了，这是我没有想到的，再到了最后要上线的时候，又发现一个功能没有做，这点真的是需求写的不明确造成的。还有就是把一段本来可以写的很简答的代码，复杂化了，我竟然用了一个循环去做，也是醉了，也不知道当时自己这么想的。反正种种原因吧，反正挺失败的，上线也被我拖到了晚上11点，本来预期是9点左右就能上完的。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2016-10-28T10:47:35.000Z">2016-10-28</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 838 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2016/10/28/%E5%90%8E%E6%9C%9F%E9%9D%99%E6%80%81%E7%BB%91%E5%AE%9A%E8%A7%A3%E8%AF%BB/">后期静态绑定解读</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="后期静态绑定解读"><a href="#后期静态绑定解读" class="headerlink" title="后期静态绑定解读"></a>后期静态绑定解读</h3><p>先看下官网的这段代码<br>[官方解释][1]<br>下面摘自官网</p>
+<blockquote>
+<p>后期静态绑定的解析会一直到取得一个完全解析了的静态调用为止。另一方面，如果静态调用使用 parent:: 或者 self:: 将转发调用信息。<br>准确说，后期静态绑定工作原理是存储了在上一个“非转发调用”（non-forwarding call）的类名。当进行静态方法调用时，该类名即为明确指定的那个（通常在 :: 运算符左侧部分）；当进行非静态方法调用时，即为该对象所属的类。所谓的“转发调用”（forwarding call）指的是通过以下几种方式进行的静态调用：self::，parent::，static:: 以及 forward_static_call()。可用 get_called_class() 函数来得到被调用的方法所在的类名，static:: 则指出了其范围。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">C::test();</span><br><span class="line">//A C C</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>这里<code>C::test()</code> 调用执行到B下的<code>test()</code><br>然后依次执行<br><code>A::foo() parent::foo() self::foo()</code><br>A::foo()直接看成是A自己执行自己的方法，所以他调用自己的static::who() 这边进来没用到转发调用 直接输出A<br><code>parent::foo()</code> 进入A下的foo 里面是后期静态绑定的who ，这里执行的上一次非转发调用官网所说的上一个“非转发调用”（non-forwarding call）的类名。</p>
+<pre><code>后期静态绑定工作原理是存储了在上一个“非转发调用”（non-forwarding call）的类名</code></pre><p>很明显这里的static这的类名不是B下的因为B是转发调用，B的上一层就是C，C下有who方法因此就执行这里的who，打印C。<br>同理，self也是，打印的也是C。</p>
+<p><strong>我们把上面的这段代码改一下</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class D extends C &#123;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">D::test();</span><br><span class="line">//A D D</span><br></pre></td></tr></table></figure>
+<p>这时候结果不再是 A C C 而是 A D D ,也就是说这里的static 绑定到了D,而非C。<br>同理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class D extends C &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">D::test();</span><br><span class="line">//A B B</span><br></pre></td></tr></table></figure>
+<p>如果我们只留下A下的foo()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class D extends C &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">D::test();</span><br><span class="line">// A A A</span><br></pre></td></tr></table></figure>
+<p>也就这里没有静态绑定成功 直接用的就是A类下的who()<br>现在就很明显了当我们调用一个static::function() (静态绑定方法)他会把这个方法绑定到在继承关系中存在这个方法的最年轻的类中的方法。<br>  [1]: <a href="http://www.golaravel.com/php/language.oop5.late-static-bindings.html" target="_blank" rel="noopener">http://www.golaravel.com/php/language.oop5.late-static-bindings.html</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/page/2/">Previous</a>
+        </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/4/">Next</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
+            
+            <li><a class="pagination-link is-current" href="/page/3/">3</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
+            
+        </ul>
+    </nav>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="https://static001.geekbang.org/account/avatar/00/0f/72/91/73235447.jpg" alt="SteveWoo">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        SteveWoo
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Java Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>HangZhou China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        31
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        10
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/ppoffice">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+            <span class="level-start">
+                <span class="level-item">C&数据结构</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/MySQL/">
+            <span class="level-start">
+                <span class="level-item">MySQL</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/PHP/">
+            <span class="level-start">
+                <span class="level-item">PHP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/TCP-IP/">
+            <span class="level-start">
+                <span class="level-item">TCP/IP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Web/">
+            <span class="level-start">
+                <span class="level-item">Web</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/leetcode/">
+            <span class="level-start">
+                <span class="level-item">leetcode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">10</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E5%8D%8F%E8%AE%AE/">
+            <span class="level-start">
+                <span class="level-item">协议</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E5%B9%B4%E5%BA%A6/">
+            <span class="level-start">
+                <span class="level-item">年度</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+            <span class="level-start">
+                <span class="level-item">设计模式</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%E8%AF%BB%E4%B9%A6/">
+            <span class="level-start">
+                <span class="level-item">读书</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/11/06/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
+                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-26T07:52:43.000Z">2019-04-26</time></div>
+                    <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">架构解密-撸书</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/01/01/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%842017-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="写给自己的2017">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-01-01T11:27:02.000Z">2018-01-01</time></div>
+                    <a href="/2018/01/01/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%842017-1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">写给自己的2017</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="读书笔记-《解忧杂货铺》">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
+                    <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
+                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/11/06/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-06T03:13:42.184Z">2019-11-06</time></div>
+                    <a href="/2019/11/06/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-26T07:52:43.000Z">2019-04-26</time></div>
+                    <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="title has-link-black-ter is-size-6 has-text-weight-normal">架构解密-撸书</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/01/01/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%842017-1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="写给自己的2017">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-01-01T11:27:02.000Z">2018-01-01</time></div>
+                    <a href="/2018/01/01/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%842017-1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">写给自己的2017</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="读书笔记-《解忧杂货铺》">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
+                    <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
+                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Hexo" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 John Doe&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="Back to Top" href="javascript:;" target="_blank" rel="noopener">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

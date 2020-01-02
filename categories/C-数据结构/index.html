@@ -167,16 +167,7 @@
         </h1>
         <div class="content">
             <hr>
-<p><strong>今天做了一道题目，实现二叉搜索树的迭代，实际上就是一个实现二叉树的中序遍历。之前有做过二叉树的中序遍历但是依然想不起细节，三种遍历当中后续遍历最麻烦，光理解没用，二叉树的遍历很常见，所以他的遍历一定要记住。</strong></p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//前序遍历</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pre_order</span><span class="hljs-params">(TreeNode * root)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">NULL</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">    stk.push(root);</span><br><span class="line">    <span class="hljs-keyword">while</span>(!stk.empty())&#123;</span><br><span class="line">        TreeNode* cur = stk.top();</span><br><span class="line">        stk.pop();</span><br><span class="line">        visit(cur);</span><br><span class="line">        <span class="hljs-keyword">if</span>(cur-&gt;right)</span><br><span class="line">            stk.push(cur-&gt;right);</span><br><span class="line">        <span class="hljs-keyword">if</span>(cur-&gt;left)</span><br><span class="line">            stk.push(cur-&gt;left);</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//中序遍历</span></span><br><span class="line"><span class="hljs-comment">//思路就是存在左儿子就压栈，不存在了就出栈，然后再把他的右儿子入栈再次压入右儿子的左儿子，压完了再出栈重复上面的。</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">in_order</span><span class="hljs-params">(TreeNode * root)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!root)</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; stk;</span><br><span class="line">    TreeNode *rootfirst = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(!stk.empty()||rootfirst == root)&#123;<span class="hljs-comment">//第一次为了让空stk能进入循环。</span></span><br><span class="line">    <span class="hljs-comment">//有左儿子就入栈。包括右儿子的左儿子</span></span><br><span class="line">        <span class="hljs-keyword">while</span>(root)&#123;</span><br><span class="line">            stk.push(root);</span><br><span class="line">            root = root-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!stk.empty)&#123;</span><br><span class="line">            TreeNode cur = stk.top();</span><br><span class="line">            visit(cur);</span><br><span class="line">            stk.pop();</span><br><span class="line">            <span class="hljs-keyword">if</span>(cur-&gt;right)&#123;</span><br><span class="line">                stk.push(cur-&gt;right);</span><br><span class="line">                root = cur-&gt;right-&gt;left;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a href="http://blog.csdn.net/feliciafay/article/details/10859407" target="_blank" rel="noopener">原地址</a></p>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//后续遍历 </span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span>  </span><br><span class="line"><span class="hljs-comment">//第一种，基于前序遍历进行修改  </span></span><br><span class="line"><span class="hljs-keyword">public</span>:  </span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; postorderTraversal(TreeNode *root) &#123;  </span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; res;  </span><br><span class="line">        <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; node_stack;  </span><br><span class="line">        <span class="hljs-keyword">if</span>(root==<span class="hljs-literal">NULL</span>)  </span><br><span class="line">            <span class="hljs-keyword">return</span> res;  </span><br><span class="line">        node_stack.push(root);  </span><br><span class="line">        TreeNode* cur=root;  </span><br><span class="line">        TreeNode* pre=<span class="hljs-literal">NULL</span>;  </span><br><span class="line">        <span class="hljs-keyword">while</span>(!node_stack.empty())&#123;  </span><br><span class="line">            cur=node_stack.top();  </span><br><span class="line">            <span class="hljs-keyword">if</span>((cur-&gt;left==<span class="hljs-literal">NULL</span>&amp;&amp;cur-&gt;right==<span class="hljs-literal">NULL</span>)||((pre!=<span class="hljs-literal">NULL</span>)&amp;&amp;(pre==cur-&gt;left || pre==cur-&gt;right))) &#123;  </span><br><span class="line">            <span class="hljs-comment">//为什么基于前序遍历改后序遍历，这里是 (pre==cur-&gt;left || pre==cur-&gt;right) 这两个条件？   </span></span><br><span class="line">            <span class="hljs-comment">//因为栈的构建顺序依次是cur, cur-&gt;right, cur-&gt;left,所以pre可能是左子树或右子树。  </span></span><br><span class="line">            <span class="hljs-comment">//如果基于中序遍历改后序遍历，则条件变为了(cur-&gt;right == pre)，因为中序遍历的栈的构建顺序是cur的左儿子，左左儿子，左左左儿子,cur-&gt;right。这个顺序说明pre只能是cur的右子树。  </span></span><br><span class="line">                res.push_back(cur-&gt;val);  </span><br><span class="line">                node_stack.pop();  </span><br><span class="line">                pre=cur;  </span><br><span class="line">            &#125;<span class="hljs-keyword">else</span>&#123;  </span><br><span class="line">                <span class="hljs-keyword">if</span>(cur-&gt;right!=<span class="hljs-literal">NULL</span>)  </span><br><span class="line">                    node_stack.push(cur-&gt;right);  </span><br><span class="line">                <span class="hljs-keyword">if</span>(cur-&gt;left!=<span class="hljs-literal">NULL</span>)  </span><br><span class="line">                    node_stack.push(cur-&gt;left);  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="hljs-keyword">return</span> res;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
+<h2><span id>{}</span></h2>
         </div>
         
         
@@ -284,7 +275,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        32
                     </p>
                 </div>
             </div>
@@ -294,7 +285,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -304,7 +295,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -394,6 +385,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Spring/">
+            <span class="level-start">
+                <span class="level-item">Spring</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/TCP-IP/">
             <span class="level-start">
                 <span class="level-item">TCP/IP</span>
@@ -460,7 +459,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
+        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
     </div>
 </div>
     
@@ -472,6 +471,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -523,44 +560,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
                     <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -590,6 +589,44 @@
         
         <article class="media">
             
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -645,44 +682,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -702,7 +701,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 John Doe&nbsp;
+                &copy; 2020 John Doe&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

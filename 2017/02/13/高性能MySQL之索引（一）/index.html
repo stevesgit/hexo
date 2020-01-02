@@ -161,18 +161,18 @@
 <blockquote>
 <p>索引（在mysql中叫做“key”）是存储引擎用于快速找到记录的一种数据结构。</p>
 </blockquote>
-<h2 id="索引基础"><a href="#索引基础" class="headerlink" title="索引基础"></a>索引基础</h2><p>就像看书一样，我们想要找我们想看的内容都会翻到书的目录，找到对应的章节。这里的目录就是现实生活中的索引。<br>在mysql中，在存储引擎用类似的方式使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。</p>
-<h2 id="索引的类型"><a href="#索引的类型" class="headerlink" title="索引的类型"></a>索引的类型</h2><p>Mysql索引的类型有B-Tree索引，哈希索引，空间数据索引（R-Tree），全文索引。</p>
-<h3 id="Btree索引"><a href="#Btree索引" class="headerlink" title="Btree索引"></a>Btree索引</h3><blockquote>
+<h2><span id="索引基础">索引基础</span></h2><p>就像看书一样，我们想要找我们想看的内容都会翻到书的目录，找到对应的章节。这里的目录就是现实生活中的索引。<br>在mysql中，在存储引擎用类似的方式使用索引，其先在索引中找到对应值，然后根据匹配的索引记录找到对应的数据行。</p>
+<h2><span id="索引的类型">索引的类型</span></h2><p>Mysql索引的类型有B-Tree索引，哈希索引，空间数据索引（R-Tree），全文索引。</p>
+<h3><span id="btree索引">Btree索引</span></h3><blockquote>
 <p>当人们谈论索引的时候，如果没有特别指明类型，多半说的就是B-Tree数据结构来存储数据。大多数Mysql引擎都支持这种索引.Archive引擎是一个例外：5.1之前Archive不支持任何索引，直到5.1才开始支持单个自增列（AUTO_INCREMENT）的索引。<br>我们使用的术语“B-Tree”,是因为在MySQL在Create Table和其他语句中也使用该关键字。不过底层的存储引擎也可能使用不同的存储结构，例如NDB集群存储引擎内部实际上使用了T-Tree结构存储这种引擎，即使其名字是BTREE；Innodb则使用B+Tree，各种数据结构和算法的变种不在本讨论范围之内。</p>
 </blockquote>
 <p>![B-Tree结构][1]<br>建立在B-Tree树上的索引（技术上是B+Tree）<br>B-Tree索引能够加快访问数据的速度，因为存储引擎不再需要进行全表扫描来获取需要的数据，取而代之的是从索引的根节点（图示并未画出）开始进行搜索。根节点槽中存放了指向子节点的指针，存储引擎根据这些指向下层查找。通过比较节点页的值和要查找的值可以找到合适的指针进入下层子节点，这些指针实际上定义了子节点页中值的上限和下限。最终存储引擎要么是找到对应的值，要么该记录不存在。<br>叶子节点页比较特别，它们的指针指向的是被索引的数据，而不是其他的节点页。<br>  [1]: <a href="http://wx2.sinaimg.cn/mw690/7503dc51gy1fcoo7uy3rnj20rh0c7ab2.jpg" target="_blank" rel="noopener">http://wx2.sinaimg.cn/mw690/7503dc51gy1fcoo7uy3rnj20rh0c7ab2.jpg</a></p>
-<h3 id="索引有效查询方式"><a href="#索引有效查询方式" class="headerlink" title="索引有效查询方式"></a>索引有效查询方式</h3><h4 id="全值匹配"><a href="#全值匹配" class="headerlink" title="全值匹配"></a>全值匹配</h4><p>全值匹配指的是和索引中的所有列进行匹配，例如前面提到的索引可用于查找姓名为Cuba Allen，出生于1960-01-01的人。</p>
-<h4 id="匹配最左前缀"><a href="#匹配最左前缀" class="headerlink" title="匹配最左前缀"></a>匹配最左前缀</h4><p>前面提到的索引可用于查找所有姓为Allen的人，即只使用索引的第一列。</p>
-<h4 id="匹配范围值"><a href="#匹配范围值" class="headerlink" title="匹配范围值"></a>匹配范围值</h4><p>例如前面提到的索引可以用于查找姓在Allen和Barrymore之间的人。这里只使用了索引的第一列。</p>
-<h4 id="精确匹配某一列并范围匹配另外一列"><a href="#精确匹配某一列并范围匹配另外一列" class="headerlink" title="精确匹配某一列并范围匹配另外一列"></a>精确匹配某一列并范围匹配另外一列</h4><p>前面提到的索引也可用于查找所有姓为Allen，并且名字是字母K开头（比如Kim,Karl等）的人。即第一列last_name全匹配，第二列first_name范围匹配。</p>
-<h4 id="只访问索引的查询"><a href="#只访问索引的查询" class="headerlink" title="只访问索引的查询"></a>只访问索引的查询</h4><p>B-Tree通常可以支持“只访问索引的查询”，即查询只需要访问索引，而无需访问数据行。这种方式叫做“覆盖索引”。</p>
-<h2 id="索引的限制"><a href="#索引的限制" class="headerlink" title="索引的限制"></a>索引的限制</h2><ul>
+<h3><span id="索引有效查询方式">索引有效查询方式</span></h3><h4><span id="全值匹配">全值匹配</span></h4><p>全值匹配指的是和索引中的所有列进行匹配，例如前面提到的索引可用于查找姓名为Cuba Allen，出生于1960-01-01的人。</p>
+<h4><span id="匹配最左前缀">匹配最左前缀</span></h4><p>前面提到的索引可用于查找所有姓为Allen的人，即只使用索引的第一列。</p>
+<h4><span id="匹配范围值">匹配范围值</span></h4><p>例如前面提到的索引可以用于查找姓在Allen和Barrymore之间的人。这里只使用了索引的第一列。</p>
+<h4><span id="精确匹配某一列并范围匹配另外一列">精确匹配某一列并范围匹配另外一列</span></h4><p>前面提到的索引也可用于查找所有姓为Allen，并且名字是字母K开头（比如Kim,Karl等）的人。即第一列last_name全匹配，第二列first_name范围匹配。</p>
+<h4><span id="只访问索引的查询">只访问索引的查询</span></h4><p>B-Tree通常可以支持“只访问索引的查询”，即查询只需要访问索引，而无需访问数据行。这种方式叫做“覆盖索引”。</p>
+<h2><span id="索引的限制">索引的限制</span></h2><ul>
 <li>如果不是按照索引的最左列开始查询，则无法使用索引。</li>
 <li>不能跳过索引中的列。</li>
 <li>如果查询中有某个列的范围查询，则其右边所有列都无法使用索引优化查找。</li>
@@ -187,40 +187,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
@@ -246,6 +212,27 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'AhwVue6fG1J7DfFiyW2uOvYC-gzGzoHsz',
+        app_key: 'kq0SCNAmOdBfchNX9NQtTdnl',
+        placeholder: 'xxxxxxxx'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -290,7 +277,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        32
                     </p>
                 </div>
             </div>
@@ -300,7 +287,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -310,7 +297,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -400,6 +387,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Spring/">
+            <span class="level-start">
+                <span class="level-item">Spring</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/TCP-IP/">
             <span class="level-start">
                 <span class="level-item">TCP/IP</span>
@@ -466,7 +461,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
+        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
     </div>
 </div>
     
@@ -478,6 +473,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -529,44 +562,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
                     <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -596,6 +591,44 @@
         
         <article class="media">
             
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -651,44 +684,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -708,7 +703,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 John Doe&nbsp;
+                &copy; 2020 John Doe&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

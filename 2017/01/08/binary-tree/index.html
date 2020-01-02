@@ -158,27 +158,27 @@
             
         </h1>
         <div class="content">
-            <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
+            <h3><span id="性质">性质</span></h3><ol>
 <li>第i层的节点数为 2^(i-1);</li>
 <li>深度为k的节点数为2^k-1 (k&gt;=1);</li>
 <li>n0=n2+1 n0为度为0的节点就是叶节点，n2为度为2的节点</li>
 <li>n个节点数，则深度为(log2n)+1</li>
 <li>①如果i&gt;1,双亲节点就是i/2;②2i&gt;n结点i无左儿子，否则左孩子节点是2i;③2i+1&gt;n则节点没有右孩子，否则右<br>孩子为2i+1;</li>
 </ol>
-<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><p>二叉树有前序遍历，中序遍历和后续遍历。<br><img src="http://www.gocalf.com/blog/images/2012/04/bin-tree.png" alt="示例图（来源）"><br>如上图所示的一棵二叉树，对应的遍历结果分别是：</p>
+<h3><span id="二叉树的遍历">二叉树的遍历</span></h3><p>二叉树有前序遍历，中序遍历和后续遍历。<br><img src="http://www.gocalf.com/blog/images/2012/04/bin-tree.png" alt="示例图（来源）"><br>如上图所示的一棵二叉树，对应的遍历结果分别是：</p>
 <ol>
 <li>前序（NLR）：<code>A B D C E G H F I</code></li>
 <li>中序（LNR）：<code>D B A G E H C F I</code></li>
 <li>后序（LRN）：<code>D B G H E I F C A</code></li>
 <li>层序：<code>A B C D E F G H I</code></li>
 </ol>
-<h4 id="按照程序的思想去理解这三种遍历"><a href="#按照程序的思想去理解这三种遍历" class="headerlink" title="按照程序的思想去理解这三种遍历"></a>按照程序的思想去理解这三种遍历</h4><p><strong>前序遍历</strong></p>
+<h4><span id="按照程序的思想去理解这三种遍历">按照程序的思想去理解这三种遍历</span></h4><p><strong>前序遍历</strong></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//先序遍历左子树</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//先序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>中序遍历</strong></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//中序遍历左子树</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//中序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>后序遍历</strong></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//后序遍历左子树</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//后序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="推导遍历结果"><a href="#推导遍历结果" class="headerlink" title="推导遍历结果"></a>推导遍历结果</h3><blockquote>
+<h3><span id="推导遍历结果">推导遍历结果</span></h3><blockquote>
 <p>已知前序遍历为ABCDEF 中序遍历为CBAEDF 求后序遍历结果</p>
 </blockquote>
 <p>因为先序遍历可以知道根节点，中序遍历可以知道左右树。<br>所以A为根，CB为左子树，EDF为右子树。<br>CB当中B为根,B为A的左儿子，C为B的儿子，因为在中序遍历中C先打印做C为B的左儿子。<br>DEF中D为根，E为D的左儿子，F为右儿子。<br>图1<br><img src="http://ww2.sinaimg.cn/mw690/7503dc51gw1fbjes9a7bjj20aj09hjsj.jpg" alt="图1"><br>图2<br><img src="http://ww1.sinaimg.cn/mw690/7503dc51gw1fbjerhzzb5j20d30avabp.jpg" alt="图2"><br>图3<br><img src="http://ww1.sinaimg.cn/mw690/7503dc51gw1fbjeujzyghj20ey0cdgnv.jpg" alt="图3"></p>
@@ -205,40 +205,6 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
-
 
 
 <div class="card card-transparent">
@@ -263,6 +229,27 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'AhwVue6fG1J7DfFiyW2uOvYC-gzGzoHsz',
+        app_key: 'kq0SCNAmOdBfchNX9NQtTdnl',
+        placeholder: 'xxxxxxxx'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -307,7 +294,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        32
                     </p>
                 </div>
             </div>
@@ -317,7 +304,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -327,7 +314,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -417,6 +404,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Spring/">
+            <span class="level-start">
+                <span class="level-item">Spring</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/TCP-IP/">
             <span class="level-start">
                 <span class="level-item">TCP/IP</span>
@@ -483,7 +478,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
+        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
     </div>
 </div>
     
@@ -495,6 +490,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -546,44 +579,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
                     <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -613,6 +608,44 @@
         
         <article class="media">
             
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -668,44 +701,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -725,7 +720,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 John Doe&nbsp;
+                &copy; 2020 John Doe&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

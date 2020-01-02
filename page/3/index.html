@@ -132,6 +132,118 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-01-18T08:28:28.000Z">2017-01-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 143 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/01/18/max-depth-tree/">max_depth_tree</a>
+            
+        </h1>
+        <div class="content">
+            <p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<p>Subscribe to see which companies asked this question</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root == NULL)</span><br><span class="line">            return 0;</span><br><span class="line">        return max(1+maxDepth(root-&gt;left),1+maxDepth(root-&gt;right));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这道题目就是不断的递归左右子树，父的深度比儿子深度大1，左右儿子深度做比较，得出最大深度。<br><strong>可以看出递归思想在解决树问题的重要性。</strong></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-01-18T08:22:16.000Z">2017-01-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 168 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2017/01/18/invert-tree/">invert_tree</a>
+            
+        </h1>
+        <div class="content">
+            <p>Invert a binary tree.</p>
+<pre><code>     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9</code></pre><p>to</p>
+<pre><code>     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1</code></pre><p>Trivia:<br>This problem was inspired by this original tweet by Max Howell:</p>
+<blockquote>
+<p>Google: 90% of our engineers use the software you wrote (Homebrew),<br>but you can’t invert a binary tree on a whiteboard so fuck off.</p>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Subscribe to see which companies asked this question</span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    TreeNode* invertTree(TreeNode* root) &#123;</span><br><span class="line">        if(root == NULL)</span><br><span class="line">            return NULL;</span><br><span class="line">        root-&gt;left =  invertTree(root-&gt;left);</span><br><span class="line">        root-&gt;right =  invertTree(root-&gt;right);</span><br><span class="line">        TreeNode *tmp = root-&gt;left;</span><br><span class="line">        root-&gt;left = root-&gt;right;</span><br><span class="line">        root-&gt;right = tmp;</span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>这到题目不难，主要用了递归的思想，反转二叉树就是每个节点下的左右儿子，我们需要从他的最下面开始反转，这里用递归就很合适。</strong></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2017-01-08T13:12:47.000Z">2017-01-08</time>
                 
                 <div class="level-item">
@@ -155,27 +267,27 @@
             
         </h1>
         <div class="content">
-            <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol>
+            <h3><span id="性质">性质</span></h3><ol>
 <li>第i层的节点数为 2^(i-1);</li>
 <li>深度为k的节点数为2^k-1 (k&gt;=1);</li>
 <li>n0=n2+1 n0为度为0的节点就是叶节点，n2为度为2的节点</li>
 <li>n个节点数，则深度为(log2n)+1</li>
 <li>①如果i&gt;1,双亲节点就是i/2;②2i&gt;n结点i无左儿子，否则左孩子节点是2i;③2i+1&gt;n则节点没有右孩子，否则右<br>孩子为2i+1;</li>
 </ol>
-<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><p>二叉树有前序遍历，中序遍历和后续遍历。<br><img src="http://www.gocalf.com/blog/images/2012/04/bin-tree.png" alt="示例图（来源）"><br>如上图所示的一棵二叉树，对应的遍历结果分别是：</p>
+<h3><span id="二叉树的遍历">二叉树的遍历</span></h3><p>二叉树有前序遍历，中序遍历和后续遍历。<br><img src="http://www.gocalf.com/blog/images/2012/04/bin-tree.png" alt="示例图（来源）"><br>如上图所示的一棵二叉树，对应的遍历结果分别是：</p>
 <ol>
 <li>前序（NLR）：<code>A B D C E G H F I</code></li>
 <li>中序（LNR）：<code>D B A G E H C F I</code></li>
 <li>后序（LRN）：<code>D B G H E I F C A</code></li>
 <li>层序：<code>A B C D E F G H I</code></li>
 </ol>
-<h4 id="按照程序的思想去理解这三种遍历"><a href="#按照程序的思想去理解这三种遍历" class="headerlink" title="按照程序的思想去理解这三种遍历"></a>按照程序的思想去理解这三种遍历</h4><p><strong>前序遍历</strong></p>
+<h4><span id="按照程序的思想去理解这三种遍历">按照程序的思想去理解这三种遍历</span></h4><p><strong>前序遍历</strong></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//先序遍历左子树</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//先序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>中序遍历</strong></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//中序遍历左子树</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//中序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>后序遍历</strong></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void preOrderTraverse(Bitree T)&#123;</span><br><span class="line">   if(T == NULL)</span><br><span class="line">       return;</span><br><span class="line">   printf(&quot;%d&quot;,T-&gt;val);</span><br><span class="line">   preOrderTraverse(T-&gt;lchild);//后序遍历左子树</span><br><span class="line">   preOrderTraverse(T-&gt;rchild);//后序遍历右子树</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="推导遍历结果"><a href="#推导遍历结果" class="headerlink" title="推导遍历结果"></a>推导遍历结果</h3><blockquote>
+<h3><span id="推导遍历结果">推导遍历结果</span></h3><blockquote>
 <p>已知前序遍历为ABCDEF 中序遍历为CBAEDF 求后序遍历结果</p>
 </blockquote>
 <p>因为先序遍历可以知道根节点，中序遍历可以知道左右树。<br>所以A为根，CB为左子树，EDF为右子树。<br>CB当中B为根,B为A的左儿子，C为B的儿子，因为在中序遍历中C先打印做C为B的左儿子。<br>DEF中D为根，E为D的左儿子，F为右儿子。<br>图1<br><img src="http://ww2.sinaimg.cn/mw690/7503dc51gw1fbjes9a7bjj20aj09hjsj.jpg" alt="图1"><br>图2<br><img src="http://ww1.sinaimg.cn/mw690/7503dc51gw1fbjerhzzb5j20d30avabp.jpg" alt="图2"><br>图3<br><img src="http://ww1.sinaimg.cn/mw690/7503dc51gw1fbjeujzyghj20ey0cdgnv.jpg" alt="图3"></p>
@@ -294,7 +406,7 @@ Return 3. The paths that sum to 8 are:
             
         </h1>
         <div class="content">
-            <h1 id="判断是否是平衡二叉树"><a href="#判断是否是平衡二叉树" class="headerlink" title="判断是否是平衡二叉树"></a>判断是否是平衡二叉树</h1><blockquote>
+            <h1><span id="判断是否是平衡二叉树">判断是否是平衡二叉树</span></h1><blockquote>
 <p>QuestionEditorial Solution  My Submissions<br>Total Accepted: 147366<br>Total Submissions: 408360<br>Difficulty: Easy<br>Contributors: Admin<br>Given a binary tree, determine if it is height-balanced.<br>For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.<br>Subscribe to see which companies asked this question</p>
 </blockquote>
 <p><strong>平衡二叉树：它是一 棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</strong><br>如何解决这道题目一个思路就是按照递归的思路去做。先去判读根节点的左右两边的深度差是否大于1，小于的话再去判断他的子树是否为平衡二叉树。这里就要借助递归。</p>
@@ -400,21 +512,21 @@ Return 3. The paths that sum to 8 are:
             
         </h1>
         <div class="content">
-            <h1 id="CGI-FastCGI-PHP-CGI-PHP-FPM"><a href="#CGI-FastCGI-PHP-CGI-PHP-FPM" class="headerlink" title="CGI,FastCGI,PHP-CGI,PHP-FPM"></a>CGI,FastCGI,PHP-CGI,PHP-FPM</h1><hr>
+            <h1><span id="cgifastcgiphp-cgiphp-fpm">CGI,FastCGI,PHP-CGI,PHP-FPM</span></h1><hr>
 <blockquote>
 <p>之前研究了下一次完整的Web请求涉及到的过程，今天在学Java的JSP的时候就突然想起来想好好总结一下PHP的CGI有关的知识，之前看过好几遍CGI但是过一段时间总是忘记，又由于重新学习了一遍Web协议，这次再看也许会焕然一新。</p>
 </blockquote>
-<h3 id="CGI出现原因"><a href="#CGI出现原因" class="headerlink" title="CGI出现原因"></a>CGI出现原因</h3><p>浏览器通过http协议向服务器请求一个资源时，如果这个请求是静态（图片，html，mp3,pdf…）,我们的HTTP<br>Server(Nginx,Apache)能直接根据地址通过HTTP相应（Response）请求。但是我们访问的资源不可能只是静态的，如果是想访问动态的资源时怎么处理呢？Nginx服务器本身是处理不了的，他只能交给（应用服务器）Application Server来处理。但有一个问题Nginx服务器怎么和应用服务器通信呢，大家互相都不认识。为了解决这个问题，CGI就出现了。</p>
-<h3 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h3><blockquote>
+<h3><span id="cgi出现原因">CGI出现原因</span></h3><p>浏览器通过http协议向服务器请求一个资源时，如果这个请求是静态（图片，html，mp3,pdf…）,我们的HTTP<br>Server(Nginx,Apache)能直接根据地址通过HTTP相应（Response）请求。但是我们访问的资源不可能只是静态的，如果是想访问动态的资源时怎么处理呢？Nginx服务器本身是处理不了的，他只能交给（应用服务器）Application Server来处理。但有一个问题Nginx服务器怎么和应用服务器通信呢，大家互相都不认识。为了解决这个问题，CGI就出现了。</p>
+<h3><span id="cgi">CGI</span></h3><blockquote>
 <p>通用网关接口（Common Gateway Interface/CGI）是一种重要的互联网技术，可以让一个客户端，从网页浏览器向执行在网络服务器上的程序请求数据。CGI描述了服务器和请求处理程序之间传输数据的一种标准。</p>
 </blockquote>
 <p>上面是Wiki上关于CGI的解释，也就是说他是一种协议。<br>我们看下CGI的特点，接着上面的当HTTP Service(nginx，Apache)接收到请求处理index.php的时候，他把这个请求交给了实现了CGI协议的<code>CGI解释器进程</code>，接下来解释器进程会解析php.ini文件，初始化执行环境，然后处理请求，再以规定CGI规定的格式返回处理后的结果，退出进程。下一个请求来时再创建新进程。这里存在一个问题就是当我执行完index.php后我想访问next.php时会重复前面的<code>解析php.ini文件，初始化执行环境</code>而且每次请求的时候他会启动一个进程，当多个请求同时来的时候会同时启动多个进程会给服务器带来压力。<br>综上CGI解释器进程的缺点是做一些重复工作，进程进来执行完后退出，利用率低。为了解决这几个问题出现了新的协议CGI的升级版Fast-CGI</p>
-<h3 id="Fast-CGI"><a href="#Fast-CGI" class="headerlink" title="Fast-CGI"></a>Fast-CGI</h3><p>FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一次(这是CGI最为人诟病的fork-and-execute 模式)。它还支持分布式的运算, 即 FastCGI 程序可以在网站服务器以外的主机上执行并且接受来自其它网站服务器来的请求。</p>
+<h3><span id="fast-cgi">Fast-CGI</span></h3><p>FastCGI像是一个常驻(long-live)型的CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去fork一次(这是CGI最为人诟病的fork-and-execute 模式)。它还支持分布式的运算, 即 FastCGI 程序可以在网站服务器以外的主机上执行并且接受来自其它网站服务器来的请求。</p>
 <p>FastCGI是语言无关的、可伸缩架构的CGI开放扩展，其主要行为是将CGI解释器进程保持在内存中并因此获得较高的性能。众所周知，CGI解释器的反复加载是CGI性能低下的主要原因，如果CGI解释器保持在内存中并接受FastCGI进程管理器调度，则可以提供良好的性能、伸缩性、Fail- Over特性等等。</p>
-<h3 id="PHP-CGI"><a href="#PHP-CGI" class="headerlink" title="PHP-CGI"></a>PHP-CGI</h3><p>一开始一看名字我以为PHP-CGI是一个实现CGI协议的CGI进程，但其实不是，他是实现了FastCGI协议的进程。PHP-CGI是PHP内置的，PHP本身应该是没有实现CGI协议的进程（因为这个太落后了）。</p>
+<h3><span id="php-cgi">PHP-CGI</span></h3><p>一开始一看名字我以为PHP-CGI是一个实现CGI协议的CGI进程，但其实不是，他是实现了FastCGI协议的进程。PHP-CGI是PHP内置的，PHP本身应该是没有实现CGI协议的进程（因为这个太落后了）。</p>
 <p>PHP-CGI与PHP-FPM一样，也是一个fastcgi进程管理器，PHP-CGI的问题在于 1、PHP-CGI变更php.ini配置后需重启PHP-CGI才能让新的php-ini生效，不可以平滑重启 2、直接杀死php-cgi进程,php就不能运行了。(PHP-FPM和Spawn-FCGI就没有这个问题,守护进程会平滑从新生成新的子进程。） 针对PHP-CGI的不足，PHP-FPM应运而生。</p>
-<h3 id="PHP-FPM"><a href="#PHP-FPM" class="headerlink" title="PHP-FPM"></a>PHP-FPM</h3><p>PHP-FPM是一个PHP FastCGI管理器，是只用于PHP的，使用PHP-FPM来控制PHP-CGI的FastCGI进程，它负责管理一个进程池，来处理来自Web服务器的请求。可以在 <a href="http://php-fpm.org/download" target="_blank" rel="noopener">http://php-fpm.org/download</a> 下载得到。</p>
-<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>PHP-FPM的使用非常方便，配置都是在PHP-FPM.ini的文件内，而启动、重启都可以从php/sbin/PHP-FPM中进行。更方便的是修改php.ini后可以直接使用PHP-FPM reload进行加载，无需杀掉进程就可以完成php.ini的修改加载。使用PHP-FPM可以使PHP有不小的性能提升。PHP-FPM控制的进程CPU回收的速度比较慢，内存分配的很均匀。</p>
+<h3><span id="php-fpm">PHP-FPM</span></h3><p>PHP-FPM是一个PHP FastCGI管理器，是只用于PHP的，使用PHP-FPM来控制PHP-CGI的FastCGI进程，它负责管理一个进程池，来处理来自Web服务器的请求。可以在 <a href="http://php-fpm.org/download" target="_blank" rel="noopener">http://php-fpm.org/download</a> 下载得到。</p>
+<h4><span id="特点">特点：</span></h4><p>PHP-FPM的使用非常方便，配置都是在PHP-FPM.ini的文件内，而启动、重启都可以从php/sbin/PHP-FPM中进行。更方便的是修改php.ini后可以直接使用PHP-FPM reload进行加载，无需杀掉进程就可以完成php.ini的修改加载。使用PHP-FPM可以使PHP有不小的性能提升。PHP-FPM控制的进程CPU回收的速度比较慢，内存分配的很均匀。</p>
 <p><strong>参考</strong></p>
 <ol>
 <li><a href="http://www.jianshu.com/p/571c474279af" target="_blank" rel="noopener">WEB请求处理三涉及到CGI部分
@@ -467,7 +579,7 @@ Return 3. The paths that sum to 8 are:
             
         </h1>
         <div class="content">
-            <h1 id="Same-Tree"><a href="#Same-Tree" class="headerlink" title="Same Tree"></a>Same Tree</h1><hr>
+            <h1><span id="same-tree">Same Tree</span></h1><hr>
 <blockquote>
 <p>Given two binary trees, write a function to check if they are equal or not.<br>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.<br>Subscribe to see which companies asked this question</p>
 </blockquote>
@@ -564,113 +676,12 @@ Return 3. The paths that sum to 8 are:
             
         </h1>
         <div class="content">
-            <h2 id="两个月工作总结（9-22-11-30）"><a href="#两个月工作总结（9-22-11-30）" class="headerlink" title="两个月工作总结（9.22-11.30）"></a>两个月工作总结（9.22-11.30）</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+            <h2><span id="两个月工作总结922-1130">两个月工作总结（9.22-11.30）</span></h2><h2><span id="前言">前言</span></h2><blockquote>
 <p>暑假一直在找实习，可是一直碰壁，第一网上找公司，没有经验，唯一去的两家都是培训机构，无奈在家学习了一个暑假。9月初， 暑假结束，我从家里出来找实习，那个时候学校里还是有很多课的（我们这专业就是这么变态），但是我觉得这些课都没什么用，就毅然决定出来找工作了。当时想的无非是，自己在家看书，都是些书本上的东西，实战的还是有缺乏。然后网上就找到了一家公司A，进去面试了，面试官是个干了10年的大牛，算是这家小公司的CTO，笔试的都是些比较基础的，涉及到一些前端的知识点。那场面试呢，面试官考我的也是很基础的东西，首先就是开发环境,我毫不犹豫的说我是MNMP环境，然后他接着问，是怎么安装这些环境的。我就说都很简单啊，就是用Brew安装的，还有Mysql可以下载一个安装包安装。他继续追问，那如果我要安装在一个指定的目录下，怎么办。当时我，一脸懵逼，用惯了Brew，一切都是固定的目录文件夹，确实没有考虑过指定的文件夹，安装，现在想来无非就是编译安装，with指定一下位置。然后他继续追问了一些HTTP的问题，TCP/IP和HTTP的关系，我当时还说错了这两者的依附关系，说TCP/IP属于HTTP，现在想来我暑假那段时间都做了点什么事情啊。再然后就说了点，关于PHP的正则的一些问题，贪婪匹配和严格匹配吧，也没解答好。这是我面的第一家公司，后来面进了，干了两天就不干不了，那个公司只有一个技术大牛，然后前后端一起做，也就是PHP也要干前端的活，还有就是技术氛围太差了。</p>
 </blockquote>
 <hr>
 <p>离开了第一家实习的公司不久，我就获得了一家150团队的中小型公司B的面试机会，去面试前我还准备好好复习一下面试的基本知识。然后第二天一大早我就去面试了，那家公司一进去就是两大排，中间是过道，我看了下给人一种蛮好的技术氛围。进入面试环节，面试官上来看了下我的简历，还是老规矩，自我介绍一下。我感觉每次在自我介绍环节，都是很尴尬的状态，我说我本不是计算机专业，大学读的专业偏硬件，但是自学这个有一段时间了，对技术充满了兴趣。（真的好干）然后就是说一些项目经验什么的，我说项目经验目前还是没有，但是自己做过一个小论坛，博客之类的东西，然后部署在阿里云服务器上，在线上环境，可以给你看下，之后他就略微的看了下。（当时我对我的作品还是比较满意，但是现在想想那东西真不值得拿出手）。面试官接着问了技术的问题，问我关于mysql的Left Join特点和Join 的区别，我就回答了他。紧接着，问了我关于接口和抽象类的区别，我就开始处于模糊的状态，我说抽象类和接口是一个可以继承多个，一个不可以。然后他回答说，想让我说的不是这个点，是使用时候的区别。我答不上来，学艺不精啊。现在想想抽象类和接口确实区别还蛮大的，但当时学的时候没有充分的去分析和总结，这些确实做的不够。这些问题问的都是最最基础的，之后就问了点关于环境的问题，问我用什么编程软件，什么环境下编程什么的…面试结束，对自己感觉只能打70分，我给自己找了个借口是暑假一直在研究C和数据结构，php面向对象和一些myql确实没有深入的研究。但现在看来是不不成立的，这些真的是借口。<br>但是终究，我还是进了这家公司，进去的时候一共有三个实习生，就我一个是本地的，其他都是江西的，一个已经干了一个月了，另外一个比我早来一天。</p>
 <p>刚进来的时候，不知道做点什么，光搭环境就花了一天，公司用的环境是PHP7+Nginx+Mysql5.7+Centos6,就这点东西，我在Win下搭了大半个工作日，还是基于虚拟机的。后来也不知道咋弄的，坐在我旁边的同事HY就和我说，其实我们公司大多数环境都是用Docker的。额…然后又切换到Docker工作了一段时间。<br>一开始，其实我的项目经理给我的时间是大概两个礼拜适应环境（这是我后来知道的，他们的态度是两个礼拜适应不了走人），其实我压根就不需要这么长时间，因为Laravel框架我早就会了，只需要几天时间回顾一下就可以了，但是我没有主动去接收任务，我研究了下公司的源码，甚至还想看Laravel的源码，研究一下，回头看，那段看源码的时间，确实是效率不高但有花时间的一段时期。索性时间不长，大概就是两个礼拜。然后就被安排任务了，第一个任务是跟着ZHL一起迁移API，其实迁移API怎么说呢，说简单也简单，想简单了就是复制粘贴的事，但我还是有去了解那些业务逻辑的。第一个貌似是一个detail详情的API，做的时候也是糊里糊涂的，讨教了ZHL很久，最终才解决了，有了第一个，下面就得心应手了，接连做了好几个也不费力。之后就是做了一个金融的后台接口，再之后就是举报API了。金融后台因为学校考试的原因，本来项目经理考虑要给其他人做的，我接了下来，以为我想学更多的东西嘛。最后还是赶着完成了这个项目，第一次做这个确实感觉经验很缺乏，很多东西都是中途加上去，边和前端调试变修改的。再就是我感觉做的最失败的东西了，举报的API，听需求的时候，当时因为后台接口和APP接口有点类似，总以为一些需求不是自己的需求，也觉得这个东西很简单，但是做着做着却发现，越做越复杂了，这是我没有想到的，再到了最后要上线的时候，又发现一个功能没有做，这点真的是需求写的不明确造成的。还有就是把一段本来可以写的很简答的代码，复杂化了，我竟然用了一个循环去做，也是醉了，也不知道当时自己这么想的。反正种种原因吧，反正挺失败的，上线也被我拖到了晚上11点，本来预期是9点左右就能上完的。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2016-10-28T10:47:35.000Z">2016-10-28</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 minutes read (About 838 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2016/10/28/%E5%90%8E%E6%9C%9F%E9%9D%99%E6%80%81%E7%BB%91%E5%AE%9A%E8%A7%A3%E8%AF%BB/">后期静态绑定解读</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="后期静态绑定解读"><a href="#后期静态绑定解读" class="headerlink" title="后期静态绑定解读"></a>后期静态绑定解读</h3><p>先看下官网的这段代码<br>[官方解释][1]<br>下面摘自官网</p>
-<blockquote>
-<p>后期静态绑定的解析会一直到取得一个完全解析了的静态调用为止。另一方面，如果静态调用使用 parent:: 或者 self:: 将转发调用信息。<br>准确说，后期静态绑定工作原理是存储了在上一个“非转发调用”（non-forwarding call）的类名。当进行静态方法调用时，该类名即为明确指定的那个（通常在 :: 运算符左侧部分）；当进行非静态方法调用时，即为该对象所属的类。所谓的“转发调用”（forwarding call）指的是通过以下几种方式进行的静态调用：self::，parent::，static:: 以及 forward_static_call()。可用 get_called_class() 函数来得到被调用的方法所在的类名，static:: 则指出了其范围。</p>
-</blockquote>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">C::test();</span><br><span class="line">//A C C</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>这里<code>C::test()</code> 调用执行到B下的<code>test()</code><br>然后依次执行<br><code>A::foo() parent::foo() self::foo()</code><br>A::foo()直接看成是A自己执行自己的方法，所以他调用自己的static::who() 这边进来没用到转发调用 直接输出A<br><code>parent::foo()</code> 进入A下的foo 里面是后期静态绑定的who ，这里执行的上一次非转发调用官网所说的上一个“非转发调用”（non-forwarding call）的类名。</p>
-<pre><code>后期静态绑定工作原理是存储了在上一个“非转发调用”（non-forwarding call）的类名</code></pre><p>很明显这里的static这的类名不是B下的因为B是转发调用，B的上一层就是C，C下有who方法因此就执行这里的who，打印C。<br>同理，self也是，打印的也是C。</p>
-<p><strong>我们把上面的这段代码改一下</strong></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class D extends C &#123;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">D::test();</span><br><span class="line">//A D D</span><br></pre></td></tr></table></figure>
-<p>这时候结果不再是 A C C 而是 A D D ,也就是说这里的static 绑定到了D,而非C。<br>同理</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class D extends C &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">D::test();</span><br><span class="line">//A B B</span><br></pre></td></tr></table></figure>
-<p>如果我们只留下A下的foo()</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class A &#123;</span><br><span class="line">    public static function foo() &#123;</span><br><span class="line">        static::who();</span><br><span class="line">    &#125;</span><br><span class="line">    public static function who() &#123;</span><br><span class="line">        echo __CLASS__.&quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class B extends A &#123;</span><br><span class="line">    public static function test() &#123;</span><br><span class="line">        A::foo();</span><br><span class="line">        parent::foo();</span><br><span class="line">        self::foo();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class C extends B &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">class D extends C &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">D::test();</span><br><span class="line">// A A A</span><br></pre></td></tr></table></figure>
-<p>也就这里没有静态绑定成功 直接用的就是A类下的who()<br>现在就很明显了当我们调用一个static::function() (静态绑定方法)他会把这个方法绑定到在继承关系中存在这个方法的最年轻的类中的方法。<br>  [1]: <a href="http://www.golaravel.com/php/language.oop5.late-static-bindings.html" target="_blank" rel="noopener">http://www.golaravel.com/php/language.oop5.late-static-bindings.html</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2016-10-04T07:40:36.000Z">2016-10-04</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 218 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2016/10/04/%E6%96%B0%E5%AE%B6/">新家</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>由于阿里云太坑了，原本想一直用着阿里的那个学生服务器，可是后来阿里强行要求签到10天才能发抵用券，我索性就放弃治疗了。还好，腾讯还算厚道，我那个测试论坛现在还跑在腾讯的服务器上，每个月只是象征性地收一块钱，速度还比阿里的签到10天还要10快的服务器好多了。</p>
-</blockquote>
-<p>  从同事那听说 他有用github page 效果还蛮好，关键是我再也不用担心服务器续费问题了，这里以后就是记录我程序员生涯的地方了，蛮好。😊</p>
-<p>这里主要还是写点PHP，C，数据结构，设计模式这类东西，希望对自己有点作用。</p>
 
         </div>
         
@@ -693,7 +704,7 @@ Return 3. The paths that sum to 8 are:
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/page/2/">Previous</a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
+        <div class="pagination-next">
             <a class="is-flex-grow has-text-black-ter" href="/page/4/">Next</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -703,6 +714,8 @@ Return 3. The paths that sum to 8 are:
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
             
             <li><a class="pagination-link is-current" href="/page/3/">3</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
             
         </ul>
     </nav>
@@ -751,7 +764,7 @@ Return 3. The paths that sum to 8 are:
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        32
                     </p>
                 </div>
             </div>
@@ -761,7 +774,7 @@ Return 3. The paths that sum to 8 are:
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -771,7 +784,7 @@ Return 3. The paths that sum to 8 are:
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -861,6 +874,14 @@ Return 3. The paths that sum to 8 are:
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Spring/">
+            <span class="level-start">
+                <span class="level-item">Spring</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/TCP-IP/">
             <span class="level-start">
                 <span class="level-item">TCP/IP</span>
@@ -927,7 +948,7 @@ Return 3. The paths that sum to 8 are:
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
+        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
     </div>
 </div>
     
@@ -939,6 +960,44 @@ Return 3. The paths that sum to 8 are:
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -990,44 +1049,6 @@ Return 3. The paths that sum to 8 are:
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
                     <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -1057,6 +1078,44 @@ Return 3. The paths that sum to 8 are:
         
         <article class="media">
             
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -1112,44 +1171,6 @@ Return 3. The paths that sum to 8 are:
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1169,7 +1190,7 @@ Return 3. The paths that sum to 8 are:
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 John Doe&nbsp;
+                &copy; 2020 John Doe&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 

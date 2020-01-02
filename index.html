@@ -132,6 +132,137 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 minutes read (About 1965 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">2019年度总结</a>
+            
+        </h1>
+        <div class="content">
+            <h2><span id="年度技术总结">年度技术总结</span></h2><p>[toc]</p>
+<h3><span id="技术对别">技术对别</span></h3><h4><span id="2018">2018</span></h4><p>2018年年底自掌握的技术栈，业务框架SpringBoot，对SpringCloud不熟悉，只是会简单的调用下Feign，对业务模块分层也不清晰，年底开始参与学习Netty框架，但还未达到能写出一款应用的水平，自己尚未有说单独写一块业务的能力，还需要在别人的帮助下搭建一些脚手架。对Java基础感觉还不是很夯实，因为自己也是半路转过来的第一年，特别是JUC这块几乎说没有看过一遍。还有就是不具备网络开发的能力，长连接服务压根就没有开发过。JVM这块也不熟。</p>
+<p>数据库这块的话，当时能比较顺利的编写一些MongoDB，Mysql已经渐渐被弱化，Redis其实也只是到达能使用的阶段，并且基本能使用好他。</p>
+<h4><span id="2019">2019</span></h4><p>2019年年底，比去年多了就是能熟练编写Netty应用，并在Netty的基础上编写了 通道服务，曾开过一遍Netty的源码但是由于看的时候也属于走马观花，没有说自己去Debug做记录，只是跟着别人的思路走源码，所以到现在也只能知道一个大概的设计思路。</p>
+<p>JUC这部分，开始阅读了一些数据（高并发编程实战，并发编程之美，极客时间的并发），但这些阅读也属于松松夸夸，有些看了大部分，有些看了一部分。都属于缺乏总结性思考。但是相对于2018年，在并发这块稍微有了些思路，在项目中使用了线程池，Synchronzied，ConcurrentHashMap这些并发工具。可以说是对并发编程，有了一个初步级别的认知，但未达到熟练使用，在今年评级的时候，评委问了一个如何实现一个阻塞队列的问题居然还没答上来，实属垃圾。因为平常对这些JUC下的工具缺乏系统性思考，所以导致学了知道，知道了过了一段时间，就变成了不知道。没有说是一种学了知道，知道了去使用，使用后强化记忆，再去思考的过程。</p>
+<p>JVM这块部分，自己一直在强调要开始学习，学习，学习，但是从今年开始有时间的时候没有想过要开始学JVM，没有时间的时候JVM的优先级永远是最低的。</p>
+<p>数据库这块，今年也就是上个月开始阅读了Redis源码（redis设计与实现）这本书，也就是基本上跟着作者的思路走一遍。Mysql这块没有继续阅读一些更深的原理书，Mysql的原理知识还是停留在2017年的水平阶段，MongoDB也没有进行更一步的深入，阶段停留在2018年。</p>
+<p>网络协议这块， 今年因为由于做通道，所以自己开始了解了一些网络知识，但是这块知识还是属于薄弱的，在出了问题还是比较难以去解决。</p>
+<h3><span id="技术进展">技术进展</span></h3><p>Netty（掌握） Redis（深入） JUC（入门） 网络知识（初识）</p>
+<h3><span id="技术薄弱">技术薄弱</span></h3><p>SpringCloud 分布式理论 Mysql MongoDB 一些服务的部署 网络知识 </p>
+<p>系统术语这块还是很欠缺的，就像大佬说的那样，平常也应该关注一下系统术语，不然无法交流了都</p>
+<p>什么熔断，降级，雪崩，健壮，鲁棒，可用，可靠，并发这些都是应该对其进行认知和理解的</p>
+<p>业务系统这块也是薄弱的，如果说要我来架构一个后端系统，我应该如何去架构设计，这个说上去有点简单，但是能把它做好就是能够达到P7级别了，我现在还不具备这个能力。</p>
+<p>中间件薄弱，比如RabbitMQ缺乏对其原理的理解（甚至没看过一本相关的书籍），Zookeeper（没去尝试使用过），类似分库分表的Sharding JDBC，Mycat也只是说知道却没有自己去搭一个弄一下。</p>
+<p>设计上面也是薄弱的，一个主程应该是具备模块的设计能力的，我今年算是设计了几个模块，但是其规范型还是不够的，就是想写点啥就写点啥的那种水平状态，连时序图，结构图，数据流向图，这些图没有掌握好，只是能参照着画一下。</p>
+<p>Linux底层的网络开发不熟悉，因为通道依赖于底层的操作系统函数，如Select Epoll这些，自己没有使用过，对其的理解就不深，如果面试的时候问一些类似的问题，答不出来我觉得就有些业务了。</p>
+<h3><span id="方法总结">方法总结</span></h3><p>说起方法总结，自己的学习方法一直觉得有问题，一直是缺乏阶段性总结。譬如一个月总结一次，一个礼拜总结一次，自己在这一年里，没有做过类似的事情，有时候尝试做一下每天总结一次，但是做着做着就阶段性放弃。</p>
+<p>就像这次评级的时候，大佬们问我说你线上遇到了啥问题，以及如何解决这些问题的，我发现我懵逼了，不知道自己说了些啥，就是感觉自己表现还是挺差的。</p>
+<p>知行合一这个思想，我2017年就是在指导自己，但是自己还是懒，2018年有了知的时候不去行，有了行的时候也没有回顾性总结。希望在2019年自己能做到知行合一。</p>
+<h3><span id="2020期望">2020期望</span></h3><p>2020算是自己做技术的第三个年头了，对自己第三年的要求肯定是要比前两年更高的。希望自己能做到如下：</p>
+<ul>
+<li>掌握熟练java的JUC，熟练并发编程（没有场景的话，自己去模拟场景）</li>
+<li>熟悉JVM（这块必须得要熟悉了，拖了很久了，在面试如果不掌握这些很不有利）</li>
+<li>分布式（Spring Cloud的组件，Eureka，Zuul, Hystrix）这些必须要掌握了，能对其有一个比较深的理解，能做到能使用，知道为何要使用，以及如何使用，还需要对其进行进阶看他们的源码。</li>
+<li>数据库，能够吃烂Mysql，熟练使用MongoDB（吃烂MongoDB），Redis的话感觉集群去熟悉了解，这些数据库的集群，读写分离，高可用必须要去掌握了解了。</li>
+<li>掌握一些常用的中间件，不只是能用中间件（RabbitMQ，Kafka，RocketMQ）都可以去熟练掌握一下，有条件时间的话还可以看下RabbitMQ的源码。</li>
+<li>可以业务时间，多去掌握一下其他的语言如Go，我是想去使用并且玩一下的（做一个小应用啥的）。</li>
+<li>能够对RPC有个比较深的了解，因为类似DUUBO这类RPC服务，自己还是缺乏对其的了解</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="image is-7by1">
+            <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 901 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/">IOC之loadBeanDefinitions主流程</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="Spring-IOC之loadBeanDefinitions"><a href="#Spring-IOC之loadBeanDefinitions" class="headerlink" title="Spring IOC之loadBeanDefinitions"></a>Spring IOC之loadBeanDefinitions</h2><blockquote>
+<p>loadBeanDefintions做的事情就是把xml文件转换成BeanDefintion</p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-04-26T07:52:43.000Z">2019-04-26</time>
                 
                 
@@ -260,10 +391,10 @@
 <blockquote>
 <p>床柜上放着好几本家里带来的小说，总是觉得自己一直对文学作品没什么特别大的兴趣，主要是心静不下来看这些类型的书籍，平常买的技术书籍也是堆积在那里。但是近些日子觉得还是得多看一些书，出于对自己知识面的扩展，做技术日子久了，总感觉自己的知识面太过于狭窄。做技术（敲代码 的），闲暇时间本来就不多，就算有也是把一大半时间花在了技术知识的拓展上。时间总是有的，其实前几个月自己也是荒废了比较多的时间，如果把那些看似闲暇的时间花在读书上其实收益会挺大的。所以近段时间我会劲量多读些书，书籍的范围不限，可以看点小说也可以看一些聊技术的书。<br>读书笔记写的东西很随意，只是写一些书的主要内容和感想，以便于日后想不起来还可以看一下自己的笔记。</p>
 </blockquote>
-<h3 id="书简介"><a href="#书简介" class="headerlink" title="书简介"></a>书简介</h3><p>《解忧杂货铺》还是一本很畅销的书，好像是15年的书，占据各大排行榜最畅销书首位。前段日子，朋友还说这本书很好看 ，我就先开始读了这本。</p>
-<h3 id="内容回顾："><a href="#内容回顾：" class="headerlink" title="内容回顾："></a>内容回顾：</h3><p>一开始讲的就是三个小偷，这三个人分别叫做：翔太，敦也，幸平。他们在某个小区偷了东西，然后落荒而逃，逃到了一家店，也就是我们的书名所说的“解忧杂货铺”，故事就这么开始了。</p>
+<h3><span id="书简介">书简介</span></h3><p>《解忧杂货铺》还是一本很畅销的书，好像是15年的书，占据各大排行榜最畅销书首位。前段日子，朋友还说这本书很好看 ，我就先开始读了这本。</p>
+<h3><span id="内容回顾">内容回顾：</span></h3><p>一开始讲的就是三个小偷，这三个人分别叫做：翔太，敦也，幸平。他们在某个小区偷了东西，然后落荒而逃，逃到了一家店，也就是我们的书名所说的“解忧杂货铺”，故事就这么开始了。</p>
 <p>这家店弥漫着一股奇怪的气息，他们从屋里的听到砰的响声，是屋外的牛奶箱里掉落的一封信。故事就是围绕这个接受信的牛奶箱和另外一个投递信件的窗口展开的。他们收到了一封来自过去的信，写信的人是一个叫做月兔的人，时间点大概在1979年。月兔是一名击剑运动员，他从朋友那里听说，这里有一家可以帮人解除烦恼的店，也就是这家“浪矢杂货铺”，她的烦恼是她有一个卧病在床的男友，他们都是运动员，月兔想放弃奥运会去照看男友，而男友的愿望就是月兔能够进入奥运会，这是即将死去的他唯一的愿望，月兔不知道怎么办，爱和理想产生了冲突。这三个人随即回了信，刚开始他们还不知道月兔的信是来自过去，但一来二去他们就开始明白，原来他们正在和过去的人进行对话，这家杂货铺的信箱连接着过去和未来。<br>就这样，书分5个章节写了5个故事，第一个讲的理想和爱情产生冲突的奥运选手，第二章讲的是为了音乐奋斗而不知道自己能否坚持下去的克朗，前两章的信都是寄到了未来，这三个人和过去的有烦恼的人提供了建议，第三章写的解忧杂货铺的主人浪失雄治，这里很关键，说的是杂货铺的由来，以及之所以杂货铺连接着过去和未来的原因，是店主雄治在死前的一个心愿就是在自己33年后的忌日能够知道他帮过去解决烦恼的人现在怎么样了（因为他经常做到一个梦），他的建议是不是起到了帮助，在死之前，他把这个心愿托福给了自己的儿子贵之，贵之也按照他的要求去做了，然后在他们最后一次从城里贵之的家回到关闭的杂货铺收到很多来自未来的信，他们竟然成功地连接了未来，雄治做的梦是对的。<br>最后两章也是讲的类似的故事，就是遇到烦恼了，去到杂货铺解决了，不过所反映的确实他们各自的人生，一个是富有家庭的孩子，父母生意失败了，举家逃难，这个人对人生充满了怀疑，他那时的心境就是觉得父母自私，没有为他考虑，当他像浪矢爷爷求助时，尽管浪矢建议他应该和父母在一起，但他还是在逃亡的过程中离开了他的父母，他一直觉得当初没有听浪矢的话是对的，他与父母断了联系，以一个姓的名字藤川博过着新的生活，知道他从网上知道浪矢杂货铺咨询烦恼窗口在32年后重新启动了，目的是想知道那些过去浪矢爷爷咨询烦恼的人现在怎么样了。这家伙自鸣得意，觉得自己过得很好，想证明自己当初没听浪矢的建议是很对的，就写了封回信准备送过去，直到他在送信的路上才知道了真相，在他和父母分离，他的父母也随即自杀了，原因是父母活下去的唯一希望是他们的儿子。而父母自杀的方式也很诡异，父亲写了一封自杀的信，信上说自杀的是一家三口，逆海身亡。之所以这么做，只有死于海中，尸体很难打捞，找不到很正常，他们知道自己的孩子还活着，不希望死了还影响到自己的孩子，就选择死于海中，希望自己的孩子能够以新的生活开始。（我说的有些蹩脚，但情节还是很感人的）这个故事的剧情大概就是这个样子。<br>最后一章节，讲的就是过去和未来打通的故事。讲了一个陪酒的女生，在这三个人的帮助下，放弃了配酒的工作，开始听从来自未来的三个人建议（你懂得 建议就是让她搞房地产，股票，以及什么时间点去做哪些事情），在他们的帮助下，在他们的帮助下，这个叫静美的女人从此过上了幸福的生活，最终在时间点上未来和过去产生了联系，静美来到了50多岁，和这个时空的这三个人发生了联系。联系就是开头的这三个小偷落荒而逃的原因，他们偷了一家的东西，这家的主人就是静美，并且绑架了那个想在杂货铺重开的那段时间写感谢信给浪矢的静美（静美不知道提供给他建议的是这个三个人）。</p>
-<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>内容写的有点多，小说的故事线还是很丰富的。这么点文字只能写出个大概。小说里的每个故事很形象的展示出了那些遇到困难人的心境。每个小故事都能透露着普通人的人性。他们的有一些想法我也有过。整体上这本书还是可以的，故事串联的很好，每个故事都存在这关联，连接方式就是丸光圆和杂货铺。</p>
+<h3><span id="感想">感想</span></h3><p>内容写的有点多，小说的故事线还是很丰富的。这么点文字只能写出个大概。小说里的每个故事很形象的展示出了那些遇到困难人的心境。每个小故事都能透露着普通人的人性。他们的有一些想法我也有过。整体上这本书还是可以的，故事串联的很好，每个故事都存在这关联，连接方式就是丸光圆和杂货铺。</p>
 
         </div>
         
@@ -381,8 +512,8 @@
             <blockquote>
 <p>一开始看《聊聊架构》这本书有点懵的，因为觉得架构就是软件架构，里面提到一些生命周期，听上去学术，但实际上是很有道理的，架构是无处不在的，这里我会总接一些觉得还不错篇章，也作为一次读书笔记吧。</p>
 </blockquote>
-<h2 id="什么是代码"><a href="#什么是代码" class="headerlink" title="什么是代码"></a>什么是代码</h2><p>先看一张图<img src="http://wx3.sinaimg.cn/mw690/7503dc51ly1fhlh1lscukj20rt0qp42y.jpg" alt="image"><br>上面的方形可以理解为软件，结合我自己的编程经验，这就是一个典型的后端软件模型。<br>这里可以把代码分为三部分：1.访问业务生命周期的代码2.业务逻辑代码。3.存储部分代码<br>上图的服务就是访问业务生命周期的代码，业务逻辑就是业务。</p>
-<h2 id="那什么又是服务呢？"><a href="#那什么又是服务呢？" class="headerlink" title="那什么又是服务呢？"></a>那什么又是服务呢？</h2><p>书里的一个例子很形象：客户去银行办业务，接待客户的是银行柜员，而不是专业业务人员。柜员就是一个服务，以用户听的懂的方式去和用户沟通，并把用户的要求转化为业务语言，再由银行内部的专业业务人员执行相应操作，柜员最后把执行结果转化为用户的语言，为其服务。<br><code>所以服务就是一个通道，是访问业务的一个通道。</code></p>
+<h2><span id="什么是代码">什么是代码</span></h2><p>先看一张图<img src="http://wx3.sinaimg.cn/mw690/7503dc51ly1fhlh1lscukj20rt0qp42y.jpg" alt="image"><br>上面的方形可以理解为软件，结合我自己的编程经验，这就是一个典型的后端软件模型。<br>这里可以把代码分为三部分：1.访问业务生命周期的代码2.业务逻辑代码。3.存储部分代码<br>上图的服务就是访问业务生命周期的代码，业务逻辑就是业务。</p>
+<h2><span id="那什么又是服务呢">那什么又是服务呢？</span></h2><p>书里的一个例子很形象：客户去银行办业务，接待客户的是银行柜员，而不是专业业务人员。柜员就是一个服务，以用户听的懂的方式去和用户沟通，并把用户的要求转化为业务语言，再由银行内部的专业业务人员执行相应操作，柜员最后把执行结果转化为用户的语言，为其服务。<br><code>所以服务就是一个通道，是访问业务的一个通道。</code></p>
 <p>但上面的图暴露了一个很严重问题，过于耦合，服务为完成用户访问生命周期，但上图却承担包括了组合业务和存储这两个还要提供用户访问。用户为完成访问业务逻辑生命周期，需要做的是：</p>
 <ul>
 <li>服务首先要把业务的状态从存储中加载。这是一个生命周期，主体为业务状态获取。</li>
@@ -390,8 +521,8 @@
 <li>服务把业务逻辑执行后的状态保存到存储中。这是一个生命周期，主体为业务状态保存。</li>
 </ul>
 <p>这里拿自己的后端代码打个比方，之前为了高效开发，公司的后端代码架构基本就是上面这种架构，也就是MC架构，这里的C端控制器做的工作很多，有业务逻辑，有粘合代码，甚至还包括了存储获取代码。每个业务没有重用性，不过幸好写的是基于restful架构的api，每个业务都是一个接口，<br>业务代码基本上是独立的。但是业务代码没有重用性可言，所以上面这种模型是很不好的，我们应该弃用。</p>
-<h2 id="拆分后的架构"><a href="#拆分后的架构" class="headerlink" title="拆分后的架构"></a>拆分后的架构</h2><p><img src="http://wx2.sinaimg.cn/mw690/7503dc51ly1fhlna4t4n0j20qo0rjafe.jpg" alt="image"><br>拆分后的架构如图所示，可以看出各部分是独立的，黏合代码整合了业务和存储，服务则整合了黏合代码。在实际应用中，服务为控制器中的action，业务在独立的logic层，存储在model层。而黏合代码可以看做一个管理者即XXManager，比如一个订单业务黏合代码就是一个OrderManager类。</p>
-<h3 id="为什么要这样做"><a href="#为什么要这样做" class="headerlink" title="为什么要这样做"></a>为什么要这样做</h3><p>有些人会问为什么不把存储挂在服务上，这样黏合代码就不需要了。但这样的后果就是让银行的核心人员，直接面接待客户，用户的访问因为沟通效率低就变得非常困难。黏合代码相当于一个具备行为和记忆的完整业务人，不应该直接面对用户。<br>正确的方式应该是给用户独立的访问通道,就好比银行采用柜台人员来做接待一样。服务相当于柜台是面向用户的。用户的需求是变化最频繁的,服务的方式可以避免频繁的用户需求变化对内部分工的冲击。没有服务的保护会导致用户的需求直接冲击存储,西存储非常脆弱必须保护起来。还有人会问,为何不把存储挂在业务上?这也是可以的,大家把这叫作活动记录( Active record)但这会让关心业务模型的代码人员,受到存储的影响,必然无法专注于业务生命周期上。并且存储的变动,会极大地影响业务生命周期所以一般也不采用这种方式。毕竟内存持久化的问题是计算机体系结构本身的问题,不应该由业务代比码人员来解决。采用存储挂在黏合代码上的方式,可以让黏合代码成为一个完整的虚拟人虚拟人具备记忆和行为,可以均衡地处理上述两个问题。有以上两种方式的好处,而又没有太大的弊病,这才是最合适的。因此代码就划分出了以下几个责任</p>
+<h2><span id="拆分后的架构">拆分后的架构</span></h2><p><img src="http://wx2.sinaimg.cn/mw690/7503dc51ly1fhlna4t4n0j20qo0rjafe.jpg" alt="image"><br>拆分后的架构如图所示，可以看出各部分是独立的，黏合代码整合了业务和存储，服务则整合了黏合代码。在实际应用中，服务为控制器中的action，业务在独立的logic层，存储在model层。而黏合代码可以看做一个管理者即XXManager，比如一个订单业务黏合代码就是一个OrderManager类。</p>
+<h3><span id="为什么要这样做">为什么要这样做</span></h3><p>有些人会问为什么不把存储挂在服务上，这样黏合代码就不需要了。但这样的后果就是让银行的核心人员，直接面接待客户，用户的访问因为沟通效率低就变得非常困难。黏合代码相当于一个具备行为和记忆的完整业务人，不应该直接面对用户。<br>正确的方式应该是给用户独立的访问通道,就好比银行采用柜台人员来做接待一样。服务相当于柜台是面向用户的。用户的需求是变化最频繁的,服务的方式可以避免频繁的用户需求变化对内部分工的冲击。没有服务的保护会导致用户的需求直接冲击存储,西存储非常脆弱必须保护起来。还有人会问,为何不把存储挂在业务上?这也是可以的,大家把这叫作活动记录( Active record)但这会让关心业务模型的代码人员,受到存储的影响,必然无法专注于业务生命周期上。并且存储的变动,会极大地影响业务生命周期所以一般也不采用这种方式。毕竟内存持久化的问题是计算机体系结构本身的问题,不应该由业务代比码人员来解决。采用存储挂在黏合代码上的方式,可以让黏合代码成为一个完整的虚拟人虚拟人具备记忆和行为,可以均衡地处理上述两个问题。有以上两种方式的好处,而又没有太大的弊病,这才是最合适的。因此代码就划分出了以下几个责任</p>
 <ol>
 <li>服务专注于用户(User)的需求,通过组织黏合代码,也就是虚拟人所提供的生命周期活动完成需求。</li>
 <li>黏合代码专注于管理业务中对象的生命周期,并且通过存储保存或加载业务中对象的状态,实现对业务虚拟人的模拟。</li>
@@ -496,9 +627,9 @@
             
         </h1>
         <div class="content">
-            <h2 id="浅谈CSRF攻击方式"><a href="#浅谈CSRF攻击方式" class="headerlink" title="浅谈CSRF攻击方式"></a>浅谈CSRF攻击方式</h2><h3 id="一-CSRF是什么？"><a href="#一-CSRF是什么？" class="headerlink" title="一.CSRF是什么？"></a>一.CSRF是什么？</h3><p>　　CSRF（Cross-site request forgery），中文名称：跨站请求伪造，也被称为：one click attack/session riding，缩写为：CSRF/XSRF。</p>
-<h3 id="二-CSRF可以做什么？"><a href="#二-CSRF可以做什么？" class="headerlink" title="二.CSRF可以做什么？"></a>二.CSRF可以做什么？</h3><p>　　你这可以这么理解CSRF攻击：攻击者盗用了你的身份，以你的名义发送恶意请求。CSRF能够做的事情包括：以你名义发送邮件，发消息，盗取你的账号，甚至于购买商品，虚拟货币转账……造成的问题包括：个人隐私泄露以及财产安全。</p>
-<h3 id="三-CSRF漏洞现状"><a href="#三-CSRF漏洞现状" class="headerlink" title="三.CSRF漏洞现状"></a>三.CSRF漏洞现状</h3><p>　　CSRF这种攻击方式在2000年已经被国外的安全人员提出，但在国内，直到06年才开始被关注，08年，国内外的多个大型社区和交互网站分别爆出CSRF漏洞，如：NYTimes.com（纽约时报）、Metafilter（一个大型的BLOG网站），YouTube和百度HI……而现在，互联网上的许多站点仍对此毫无防备，以至于安全业界称CSRF为“沉睡的巨人”。</p>
+            <h2><span id="浅谈csrf攻击方式">浅谈CSRF攻击方式</span></h2><h3><span id="一csrf是什么">一.CSRF是什么？</span></h3><p>　　CSRF（Cross-site request forgery），中文名称：跨站请求伪造，也被称为：one click attack/session riding，缩写为：CSRF/XSRF。</p>
+<h3><span id="二csrf可以做什么">二.CSRF可以做什么？</span></h3><p>　　你这可以这么理解CSRF攻击：攻击者盗用了你的身份，以你的名义发送恶意请求。CSRF能够做的事情包括：以你名义发送邮件，发消息，盗取你的账号，甚至于购买商品，虚拟货币转账……造成的问题包括：个人隐私泄露以及财产安全。</p>
+<h3><span id="三csrf漏洞现状">三.CSRF漏洞现状</span></h3><p>　　CSRF这种攻击方式在2000年已经被国外的安全人员提出，但在国内，直到06年才开始被关注，08年，国内外的多个大型社区和交互网站分别爆出CSRF漏洞，如：NYTimes.com（纽约时报）、Metafilter（一个大型的BLOG网站），YouTube和百度HI……而现在，互联网上的许多站点仍对此毫无防备，以至于安全业界称CSRF为“沉睡的巨人”。</p>
 <p>###四.CSRF的原理<br><img src="http://wx2.sinaimg.cn/mw690/7503dc51gy1fdcdph1ii3j20o80e4ds4.jpg" alt="此处输入图片的描述"><br>　　下图简单阐述了CSRF攻击的思想：</p>
 <p>　　</p>
 <p>　　从上图可以看出，要完成一次CSRF攻击，受害者必须依次完成两个步骤：</p>
@@ -607,7 +738,7 @@
             
         </h1>
         <div class="content">
-            <h1 id="2017年计划"><a href="#2017年计划" class="headerlink" title="2017年计划"></a>2017年计划</h1><hr>
+            <h1><span id="2017年计划">2017年计划</span></h1><hr>
 <ol>
 <li>学好JS。之前入WEB这个坑的时候，粗略地学过点js，只是学了点皮毛，感觉Web没有JS确实玩不起来。</li>
 <li>研究下C。读些开源的项目，巩固C的知识，C是接触的第一门语言，搞过单片机，但是用的也是皮毛，希望能静下心来学一波C。</li>
@@ -617,141 +748,6 @@
 <li>有空的时间可以看下操作系统和计算机原理这些书，补充一下自己的不足。</li>
 </ol>
 <p><strong>以上是我2017年的计划，貌似计划有点过多，而且2017年的下半年自己也是正式工作了，时间上更是少之又少，列以上计划一方面是为了让自己有事情做，另外一方面是让自己知道有很多不足，能够鞭策自己学习，不要浪费仅剩下一学期的大学时间。</strong></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-02-23T08:51:39.000Z">2017-02-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/PHP/">PHP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 minutes read (About 878 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/02/23/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E5%92%8CIOC/">依赖注入和IOC</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><blockquote>
-<p>依赖注入 (Dependency Injection，简称DI）<br>Class A中用到了Class B的对象b，一般情况下，需要在A的代码中显式的new一个B的对象。<br>采用依赖注入技术之后，A的代码只需要定义一个私有的B对象，不需要直接new来获得这个对象，而是通过相关的容器控制程序来将B对象在外部new出来并注入到A类里的引用中。</p>
-</blockquote>
-<p>而我们通常注入依赖的方式有两种：</p>
-<ul>
-<li><p>通过构造函数传入依赖，实现特定参数的构造函数，在新建对象时传入所依赖类型的对象。</p>
-</li>
-<li><p>通过setter方法注入依赖，实现特定属性的public set方法，来让外部容器调用传入所依赖类型的对象。</p>
-<h2 id="控制反转"><a href="#控制反转" class="headerlink" title="控制反转"></a>控制反转</h2></li>
-</ul>
-<blockquote>
-<p>控制反转（Inversion of Control，缩写为IoC），是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency<br>Injection，简称DI），还有一种方式叫“依赖查找”（Dependency<br>Lookup）。通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体，将其所依赖的对象的引用传递给它。也可以说，依赖被注入到对象中。</p>
-</blockquote>
-<p>控制反转是一种思想，而依赖注入是这种思想的一种实现。</p>
-<p>下面是一段IOC容器的实现代码。</p>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bim</span></span></span><br><span class="line"><span class="hljs-class">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">echo</span> <span class="hljs-keyword">__METHOD__</span>, <span class="hljs-string">'|'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bar</span></span></span><br><span class="line"><span class="hljs-class">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">private</span> $bim;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(Bim $bim)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">$this</span>-&gt;bim = $bim;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">$this</span>-&gt;bim-&gt;doSomething();</span><br><span class="line">            <span class="hljs-keyword">echo</span> <span class="hljs-keyword">__METHOD__</span>, <span class="hljs-string">'|'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span></span></span><br><span class="line"><span class="hljs-class">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">private</span> $bar;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(Bar $bar)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">$this</span>-&gt;bar = $bar;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">$this</span>-&gt;bar-&gt;doSomething();</span><br><span class="line">            <span class="hljs-keyword">echo</span> <span class="hljs-keyword">__METHOD__</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span></span></span><br><span class="line"><span class="hljs-class">    </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">private</span> $s = <span class="hljs-keyword">array</span>();</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__set</span><span class="hljs-params">($k, $c)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-keyword">$this</span>-&gt;s[$k] = $c;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__get</span><span class="hljs-params">($k)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-comment">// return $this-&gt;s[$k]($this);</span></span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;build(<span class="hljs-keyword">$this</span>-&gt;s[$k]);</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">         * 自动绑定（Autowiring）自动解析（Automatic Resolution）</span></span><br><span class="line"><span class="hljs-comment">         *</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> string $className</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@return</span> object</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@throws</span> Exception</span></span><br><span class="line"><span class="hljs-comment">         */</span></span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">build</span><span class="hljs-params">($className)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-comment">// 如果是匿名函数（Anonymous functions），也叫闭包函数（closures）</span></span><br><span class="line">            <span class="hljs-keyword">if</span> ($className <span class="hljs-keyword">instanceof</span> Closure) &#123;</span><br><span class="line">                <span class="hljs-comment">// 执行闭包函数，并将结果</span></span><br><span class="line">                <span class="hljs-keyword">return</span> $className(<span class="hljs-keyword">$this</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> ReflectionClass $reflector */</span></span><br><span class="line">            $reflector = <span class="hljs-keyword">new</span> ReflectionClass($className);</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">// 检查类是否可实例化, 排除抽象类abstract和对象接口interface</span></span><br><span class="line">            <span class="hljs-keyword">if</span> (!$reflector-&gt;isInstantiable()) &#123;</span><br><span class="line">                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">"Can't instantiate this."</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> ReflectionMethod $constructor 获取类的构造函数 */</span></span><br><span class="line">            $constructor = $reflector-&gt;getConstructor();</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">// 若无构造函数，直接实例化并返回</span></span><br><span class="line">            <span class="hljs-keyword">if</span> (is_null($constructor)) &#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> $className;</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">// 取构造函数参数,通过 ReflectionParameter 数组返回参数列表</span></span><br><span class="line">            $parameters = $constructor-&gt;getParameters();</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">// 递归解析构造函数的参数</span></span><br><span class="line">            $dependencies = <span class="hljs-keyword">$this</span>-&gt;getDependencies($parameters);</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">// 创建一个类的新实例，给出的参数将传递到类的构造函数。</span></span><br><span class="line">            <span class="hljs-keyword">return</span> $reflector-&gt;newInstanceArgs($dependencies);</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> array $parameters</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@return</span> array</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@throws</span> Exception</span></span><br><span class="line"><span class="hljs-comment">         */</span></span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDependencies</span><span class="hljs-params">($parameters)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            $dependencies = [];</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> ReflectionParameter $parameter */</span></span><br><span class="line">            <span class="hljs-keyword">foreach</span> ($parameters <span class="hljs-keyword">as</span> $parameter) &#123;</span><br><span class="line">                <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> ReflectionClass $dependency */</span></span><br><span class="line">                $dependency = $parameter-&gt;getClass();</span><br><span class="line">    </span><br><span class="line">                <span class="hljs-keyword">if</span> (is_null($dependency)) &#123;</span><br><span class="line">                    <span class="hljs-comment">// 是变量,有默认值则设置默认值</span></span><br><span class="line">                    $dependencies[] = <span class="hljs-keyword">$this</span>-&gt;resolveNonClass($parameter);</span><br><span class="line">                &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">                    <span class="hljs-comment">// 是一个类，递归解析</span></span><br><span class="line">                    $dependencies[] = <span class="hljs-keyword">$this</span>-&gt;build($dependency-&gt;name);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-keyword">return</span> $dependencies;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@param</span> ReflectionParameter $parameter</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@return</span> mixed</span></span><br><span class="line"><span class="hljs-comment">         * <span class="hljs-doctag">@throws</span> Exception</span></span><br><span class="line"><span class="hljs-comment">         */</span></span><br><span class="line">        <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resolveNonClass</span><span class="hljs-params">($parameter)</span></span></span><br><span class="line"><span class="hljs-function">        </span>&#123;</span><br><span class="line">            <span class="hljs-comment">// 有默认值则返回默认值</span></span><br><span class="line">            <span class="hljs-keyword">if</span> ($parameter-&gt;isDefaultValueAvailable()) &#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> $parameter-&gt;getDefaultValue();</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">Exception</span>(<span class="hljs-string">'I have no idea what to do here.'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// ----</span></span><br><span class="line">    $c = <span class="hljs-keyword">new</span> Container();</span><br><span class="line">    $c-&gt;bar = <span class="hljs-string">'Bar'</span>;</span><br><span class="line">    $c-&gt;foo = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($c)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Foo($c-&gt;bar);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-comment">// 从容器中取得Foo</span></span><br><span class="line">    $foo = $c-&gt;foo;</span><br><span class="line">    $foo-&gt;doSomething(); <span class="hljs-comment">// Bim::doSomething|Bar::doSomething|Foo::doSomething</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">// ----</span></span><br><span class="line">    $di = <span class="hljs-keyword">new</span> Container();</span><br><span class="line">    </span><br><span class="line">    $di-&gt;foo = <span class="hljs-string">'Foo'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-comment">/** <span class="hljs-doctag">@var</span> Foo $foo */</span></span><br><span class="line">    $foo = $di-&gt;foo;</span><br><span class="line">    </span><br><span class="line">    var_dump($foo);</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">    Foo#10 (1) &#123;</span></span><br><span class="line"><span class="hljs-comment">      private $bar =&gt;</span></span><br><span class="line"><span class="hljs-comment">      class Bar#14 (1) &#123;</span></span><br><span class="line"><span class="hljs-comment">        private $bim =&gt;</span></span><br><span class="line"><span class="hljs-comment">        class Bim#16 (0) &#123;</span></span><br><span class="line"><span class="hljs-comment">        &#125;</span></span><br><span class="line"><span class="hljs-comment">      &#125;</span></span><br><span class="line"><span class="hljs-comment">    &#125;</span></span><br><span class="line"><span class="hljs-comment">    */</span></span><br><span class="line">    </span><br><span class="line">    $foo-&gt;doSomething(); <span class="hljs-comment">// Bim::doSomething|Bar::doSomething|Foo::doSomething</span></span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-02-17T04:18:09.000Z">2017-02-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes read (About 728 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2017/02/17/%E4%B8%89%E7%A7%8D%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">三种工厂模式</a>
-            
-        </h1>
-        <div class="content">
-            <p>阅读《设计模式之禅》后的总结。</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前的工厂模式有看过，但是没过多久就会忘，主要还是自己平常写代码业务逻辑的时候缺少思考，可能也就会用个单例模式。然后网上很多有关设计模式的介绍，感觉有些还是介绍的不够具体，或者说只介绍到了工厂模式的一部分吧。</p>
-<h2 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h2><blockquote>
-<p>工厂方法模式的定义：Define an interface for ceating an object ,but let subclasses decide which class to instantiate.Factory Method lets a class defer instantiation to subclasses(定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到器子类。)</p>
-</blockquote>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 产品类接口</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Product</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span></span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 具体产品类</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line"><span class="hljs-keyword">public</span>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteProduct1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Product</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//业务逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//业务逻辑</span></span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 工厂类</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line"> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Creator</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span>  creatorProduct();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">   * 具体工厂类</span></span><br><span class="line"><span class="hljs-comment">   */</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteCreator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Creator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">creatorProduct</span><span class="hljs-params">($product)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">            $productObj = <span class="hljs-keyword">new</span> $product;</span><br><span class="line">        &#125;<span class="hljs-keyword">catch</span>(<span class="hljs-keyword">Exception</span> $e)&#123;</span><br><span class="line">            <span class="hljs-comment">//异常处理</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> $productObj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//用工厂类制造product1</span></span><br><span class="line">        $fc = <span class="hljs-keyword">new</span> ConcreteCreator();</span><br><span class="line">        $cp1 = $fc-&gt;creatorProduct(<span class="hljs-string">"ConcreteProduct1"</span>);</span><br><span class="line">        $cp1-&gt;method1();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><blockquote>
-<p>简单工厂模式又称静态工厂模式</p>
-</blockquote>
-<p>就是把上面的方法<code>ConcreteCreator()</code>改为静态就可以了。<br>优点很明显，就是不用实例化工厂类直接调用工厂方法就可以了。</p>
-<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p><img src="http://www.phppan.com/wp-content/uploads/2010/05/Abstract.jpg" alt="抽象工厂模式"></p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
-<li><p>封装性</p>
-</li>
-<li><p>产品族内的约束为非公开状态</p>
-</li>
-</ul>
-<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
-<li>产品族的扩展非常困难</li>
-</ul>
-<figure class="highlight php hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?php</span></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 抽象工厂模式 2010-05-28 sz</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@author</span> phppan.p#gmail.com  </span></span><br><span class="line"><span class="hljs-comment"> * http://www.phppan.com 哥学社成员（http://www.blog-brother.com/）</span></span><br><span class="line"><span class="hljs-comment"> * <span class="hljs-doctag">@package</span> design pattern</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 抽象工厂</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">AbstractFactory</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 创建等级结构为A的产品的工厂方法</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProductA</span><span class="hljs-params">()</span></span>;</span><br><span class="line"> </span><br><span class="line">     <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 创建等级结构为B的产品的工厂方法</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProductB</span><span class="hljs-params">()</span></span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 具体工厂1</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteFactory1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AbstractFactory</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProductA</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ProductA1();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProductB</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ProductB1();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 具体工厂2</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteFactory2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AbstractFactory</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProductA</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ProductA2();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createProductB</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ProductB2();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 抽象产品A</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">AbstractProductA</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 取得产品名</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 抽象产品B</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">AbstractProductB</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 取得产品名</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 具体产品Ａ1</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductA1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AbstractProductA</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> $_name;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;_name = <span class="hljs-string">'product A1'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 具体产品Ａ2</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductA2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AbstractProductA</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> $_name;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;_name = <span class="hljs-string">'product A2'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 具体产品B1</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductB1</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AbstractProductB</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> $_name;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;_name = <span class="hljs-string">'product B1'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 具体产品B2</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProductB2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">AbstractProductB</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">private</span> $_name;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">$this</span>-&gt;_name = <span class="hljs-string">'product B2'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;_name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * 客户端</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">     <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * Main program.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">self</span>::run(<span class="hljs-keyword">new</span> ConcreteFactory1());</span><br><span class="line">        <span class="hljs-keyword">self</span>::run(<span class="hljs-keyword">new</span> ConcreteFactory2());</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 调用工厂实例生成产品，输出产品名</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span>   $factory    AbstractFactory     工厂实例</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">(AbstractFactory $factory)</span> </span>&#123;</span><br><span class="line">        $productA = $factory-&gt;createProductA();</span><br><span class="line">        $productB = $factory-&gt;createProductB();</span><br><span class="line">        <span class="hljs-keyword">echo</span> $productA-&gt;getName(), <span class="hljs-string">'&lt;br /&gt;'</span>;</span><br><span class="line">        <span class="hljs-keyword">echo</span> $productB-&gt;getName(), <span class="hljs-string">'&lt;br /&gt;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Client::main();</span><br><span class="line"><span class="hljs-meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -784,6 +780,8 @@
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
             
         </ul>
     </nav>
@@ -832,7 +830,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        30
+                        32
                     </p>
                 </div>
             </div>
@@ -842,7 +840,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -852,7 +850,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -942,6 +940,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/Spring/">
+            <span class="level-start">
+                <span class="level-item">Spring</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/TCP-IP/">
             <span class="level-start">
                 <span class="level-item">TCP/IP</span>
@@ -1008,7 +1014,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
+        <a href="/tags/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">C&数据结构</a> <a href="/tags/leetcode/" style="font-size: 20px;">leetcode</a> <a href="/tags/%E5%8D%8F%E8%AE%AE/" style="font-size: 10px;">协议</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 10px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 15px;">设计模式</a>
     </div>
 </div>
     
@@ -1020,6 +1026,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1071,44 +1115,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-11-04T15:00:53.000Z">2017-11-04</time></div>
                     <a href="/2017/11/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-%E3%80%8A%E8%A7%A3%E5%BF%A7%E6%9D%82%E8%B4%A7%E9%93%BA%E3%80%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">读书笔记-《解忧杂货铺》</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
                     </p>
@@ -1138,6 +1144,44 @@
         
         <article class="media">
             
+            <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019年度总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T01:09:40.000Z">2020-01-02</time></div>
+                    <a href="/2020/01/02/2019%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年度总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://spring.io/img/spring-by-pivotal.png" alt="IOC之loadBeanDefinitions主流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T01:08:13.000Z">2019-12-09</time></div>
+                    <a href="/2019/12/09/IOC%E4%B9%8BloadBeanDefinitions%E4%B8%BB%E6%B5%81%E7%A8%8B/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IOC之loadBeanDefinitions主流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/04/26/%E6%9E%B6%E6%9E%84%E8%A7%A3%E5%AF%86-%E6%92%B8%E4%B9%A6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="架构解密-撸书">
@@ -1193,44 +1237,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="年终读书计划">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-24T04:08:04.000Z">2017-10-24</time></div>
-                    <a href="/2017/10/24/%E5%B9%B4%E7%BB%88%E8%AF%BB%E4%B9%A6%E8%AE%A1%E5%88%92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">年终读书计划</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="聊聊架构之如何写好代码（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-07-16T05:49:46.000Z">2017-07-16</time></div>
-                    <a href="/2017/07/16/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E4%BB%A3%E7%A0%811/" class="title has-link-black-ter is-size-6 has-text-weight-normal">聊聊架构之如何写好代码（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1250,7 +1256,7 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 John Doe&nbsp;
+                &copy; 2020 John Doe&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
